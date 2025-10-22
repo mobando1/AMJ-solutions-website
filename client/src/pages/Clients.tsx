@@ -3,9 +3,9 @@ import LogoWall from '@/components/LogoWall';
 import Testimonial from '@/components/Testimonial';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
-import hannahAvatar from '@assets/generated_images/Hannah_Morales_realistic_headshot_9ced90d2.png';
-import tedAvatar from '@assets/generated_images/Ted_Johnson_realistic_headshot_41539464.png';
-import lorenaAvatar from '@assets/generated_images/Lorena_Rodriguez_realistic_headshot_3076d6e9.png';
+import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
+import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
+import lorenaAvatar from '@assets/generated_images/Lorena_natural_portrait_4b420874.png';
 
 export default function Clients() {
   const caseStudies = [
