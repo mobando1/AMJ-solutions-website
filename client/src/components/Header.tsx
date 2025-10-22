@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import amjLogo from '@assets/AMJ Solutions Group Logo_1761093965545.png';
 
 export default function Header() {
   const [location] = useLocation();
@@ -21,7 +22,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" data-testid="link-home">
-              <span className="text-xl font-semibold text-foreground">AMJ Solutions Group</span>
+              <img src={amjLogo} alt="AMJ Solutions Group" className="h-10" />
             </Link>
           </div>
 

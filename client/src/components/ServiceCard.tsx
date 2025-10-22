@@ -6,6 +6,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   outcomes: string[];
+  icon?: string;
   onConsultationClick?: () => void;
 }
 
@@ -13,12 +14,18 @@ export default function ServiceCard({
   title,
   description,
   outcomes,
+  icon,
   onConsultationClick,
 }: ServiceCardProps) {
   return (
     <Card className="h-full flex flex-col hover-elevate transition-all duration-200">
-      <CardHeader>
-        <CardTitle className="text-xl">{title}</CardTitle>
+      <CardHeader className="space-y-4">
+        {icon && (
+          <div className="w-16 h-16 mx-auto">
+            <img src={icon} alt={`${title} icon`} className="w-full h-full object-contain animate-pulse" style={{ animationDuration: '3s' }} />
+          </div>
+        )}
+        <CardTitle className="text-xl text-center">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 space-y-4">
         <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>

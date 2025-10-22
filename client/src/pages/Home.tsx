@@ -5,6 +5,10 @@ import Testimonial from '@/components/Testimonial';
 import CalendlyButtonModal from '@/components/CalendlyButtonModal';
 import { Shield, Award, Users, Lock } from 'lucide-react';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
+import crisisIcon from '@assets/generated_images/Crisis_communications_shield_icon_73738f6d.png';
+import reputationIcon from '@assets/generated_images/Reputation_management_star_icon_66701172.png';
+import mediaIcon from '@assets/generated_images/Media_training_microphone_icon_bd9bdb4b.png';
+import coachingIcon from '@assets/generated_images/Executive_coaching_person_icon_6b68acf7.png';
 
 export default function Home() {
   const services = [
@@ -17,6 +21,7 @@ export default function Home() {
         'Clear, consistent messaging across all channels',
         'Brand reputation protected and strengthened',
       ],
+      icon: crisisIcon,
     },
     {
       title: 'Reputation Management',
@@ -27,6 +32,7 @@ export default function Home() {
         'Positive media coverage and thought leadership',
         'Long-term reputation resilience',
       ],
+      icon: reputationIcon,
     },
     {
       title: 'Media Training',
@@ -37,6 +43,7 @@ export default function Home() {
         'Consistent on-brand messaging',
         'Crisis-ready spokespeople',
       ],
+      icon: mediaIcon,
     },
     {
       title: 'Executive Coaching',
@@ -47,6 +54,7 @@ export default function Home() {
         'Greater confidence in high-pressure situations',
         'Authentic, compelling communication style',
       ],
+      icon: coachingIcon,
     },
   ];
 
@@ -154,11 +162,26 @@ export default function Home() {
       </Section>
 
       <Section className="bg-card">
-        <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+            Real Results. Real Impact.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Testimonial
-            quote="Ana's strategic counsel during our most challenging crisis was invaluable. Her calm, clear guidance helped us navigate a complex situation with our reputation intact."
-            author="Chief Communications Officer"
-            role="Fortune 500 Financial Services"
+            quote="AMJ has done a great job bringing structure and order to a challenging group of stakeholders. We are happy with all that they have accomplished with our company."
+            author="Hannah Morales"
+            role="Senior Director"
+          />
+          <Testimonial
+            quote="AMJ Solutions Group helped us navigate a complex program transition with clarity and professionalism. Their strategic insight was critical to our success."
+            author="Ted Johnson"
+            role="Director of Communications"
+          />
+          <Testimonial
+            quote="Ana and her team were essential during our crisis response activation. Their calm leadership and precise messaging kept our stakeholders informed and confident."
+            author="Lorena Rodriguez"
+            role="Director of Emergency Management"
           />
         </div>
       </Section>

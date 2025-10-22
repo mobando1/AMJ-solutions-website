@@ -39,11 +39,11 @@ export default function Contact() {
                     <div>
                       <h3 className="text-sm font-semibold text-foreground mb-1">Email</h3>
                       <a
-                        href="mailto:contact@amjsolutionsgroup.com"
+                        href="mailto:ana@amjsolutionsgroup.com"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         data-testid="link-contact-email"
                       >
-                        contact@amjsolutionsgroup.com
+                        ana@amjsolutionsgroup.com
                       </a>
                     </div>
                   </div>
@@ -55,11 +55,11 @@ export default function Contact() {
                     <div>
                       <h3 className="text-sm font-semibold text-foreground mb-1">Phone</h3>
                       <a
-                        href="tel:+15615550123"
+                        href="tel:+12106063073"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         data-testid="link-contact-phone"
                       >
-                        +1 (561) 555-0123
+                        (210) 606-3073
                       </a>
                     </div>
                   </div>

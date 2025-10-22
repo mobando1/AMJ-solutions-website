@@ -36,15 +36,21 @@ export default function Clients() {
   const testimonials = [
     {
       quote:
-        "Ana's strategic counsel during our most challenging crisis was invaluable. Her calm, clear guidance helped us navigate a complex situation with our reputation intact.",
-      author: 'Chief Communications Officer',
-      role: 'Fortune 500 Financial Services',
+        'AMJ has done a great job bringing structure and order to a challenging group of stakeholders. We are happy with all that they have accomplished with our company.',
+      author: 'Hannah Morales',
+      role: 'Senior Director',
     },
     {
       quote:
-        'The media training transformed how our executive team communicates. We\'re now confident, consistent, and compelling in every interview.',
-      author: 'VP Corporate Affairs',
-      role: 'Healthcare System',
+        'AMJ Solutions Group helped us navigate a complex program transition with clarity and professionalism. Their strategic insight was critical to our success.',
+      author: 'Ted Johnson',
+      role: 'Director of Communications',
+    },
+    {
+      quote:
+        'Ana and her team were essential during our crisis response activation. Their calm leadership and precise messaging kept our stakeholders informed and confident.',
+      author: 'Lorena Rodriguez',
+      role: 'Director of Emergency Management',
     },
   ];
 
@@ -118,7 +124,7 @@ export default function Clients() {
             What Clients Say
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Testimonial key={index} {...testimonial} />
           ))}

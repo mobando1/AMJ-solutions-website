@@ -49,14 +49,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:contact@amjsolutionsgroup.com" className="hover:text-primary transition-colors" data-testid="link-email">
-                  contact@amjsolutionsgroup.com
+                <a href="mailto:ana@amjsolutionsgroup.com" className="hover:text-primary transition-colors" data-testid="link-email">
+                  ana@amjsolutionsgroup.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+15615550123" className="hover:text-primary transition-colors" data-testid="link-phone">
-                  +1 (561) 555-0123
+                <a href="tel:+12106063073" className="hover:text-primary transition-colors" data-testid="link-phone">
+                  (210) 606-3073
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
