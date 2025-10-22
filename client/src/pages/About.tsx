@@ -35,16 +35,18 @@ export default function About() {
 
   return (
     <div>
-      <Section className="bg-card py-8 sm:py-10">
-        <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-3">
-            About Ana Nelson
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Over three decades of experience guiding organizations through their most critical moments
-          </p>
+      <section className="bg-card py-6 sm:py-8">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-3">
+              About Ana Nelson
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Over three decades of experience guiding organizations through their most critical moments
+            </p>
+          </div>
         </div>
-      </Section>
+      </section>
 
       <Section className="bg-background">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
