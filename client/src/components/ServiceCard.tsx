@@ -1,12 +1,12 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, LucideIcon } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
   description: string;
   outcomes: string[];
-  icon?: string;
+  icon?: LucideIcon;
   onConsultationClick?: () => void;
 }
 
@@ -14,15 +14,15 @@ export default function ServiceCard({
   title,
   description,
   outcomes,
-  icon,
+  icon: Icon,
   onConsultationClick,
 }: ServiceCardProps) {
   return (
     <Card className="h-full flex flex-col hover-elevate transition-all duration-200">
       <CardHeader className="space-y-4">
-        {icon && (
-          <div className="w-16 h-16 mx-auto">
-            <img src={icon} alt={`${title} icon`} className="w-full h-full object-contain animate-pulse" style={{ animationDuration: '3s' }} />
+        {Icon && (
+          <div className="w-16 h-16 mx-auto flex items-center justify-center">
+            <Icon className="w-12 h-12 text-primary animate-pulse" style={{ animationDuration: '3s' }} />
           </div>
         )}
         <CardTitle className="text-xl text-center">{title}</CardTitle>

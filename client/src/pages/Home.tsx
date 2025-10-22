@@ -4,12 +4,8 @@ import LogoWall from '@/components/LogoWall';
 import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import CalendlyButtonModal from '@/components/CalendlyButtonModal';
-import { Shield, Award, Users, Lock } from 'lucide-react';
+import { Shield, Award, Users, Lock, Star, Mic, TrendingUp } from 'lucide-react';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
-import crisisIcon from '@assets/generated_images/Crisis_shield_icon_transparent_fbe711fe.png';
-import reputationIcon from '@assets/generated_images/Gold_star_transparent_icon_594044c1.png';
-import mediaIcon from '@assets/generated_images/Microphone_transparent_icon_19be5303.png';
-import coachingIcon from '@assets/generated_images/Person_growth_transparent_icon_d3aecfec.png';
 
 export default function Home() {
   const services = [
@@ -22,7 +18,7 @@ export default function Home() {
         'Clear, consistent messaging across all channels',
         'Brand reputation protected and strengthened',
       ],
-      icon: crisisIcon,
+      icon: Shield,
     },
     {
       title: 'Reputation Management',
@@ -33,7 +29,7 @@ export default function Home() {
         'Positive media coverage and thought leadership',
         'Long-term reputation resilience',
       ],
-      icon: reputationIcon,
+      icon: Star,
     },
     {
       title: 'Media Training',
@@ -44,7 +40,7 @@ export default function Home() {
         'Consistent on-brand messaging',
         'Crisis-ready spokespeople',
       ],
-      icon: mediaIcon,
+      icon: Mic,
     },
     {
       title: 'Executive Coaching',
@@ -55,7 +51,7 @@ export default function Home() {
         'Greater confidence in high-pressure situations',
         'Authentic, compelling communication style',
       ],
-      icon: coachingIcon,
+      icon: TrendingUp,
     },
   ];
 
