@@ -1,6 +1,7 @@
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import LogoWall from '@/components/LogoWall';
+import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import CalendlyButtonModal from '@/components/CalendlyButtonModal';
 import { Shield, Award, Users, Lock } from 'lucide-react';
@@ -108,6 +109,8 @@ export default function Home() {
           </div>
         </Section>
       </div>
+
+      <LogoMarquee />
 
       <Section className="bg-background">
         <div className="text-center mb-12">
