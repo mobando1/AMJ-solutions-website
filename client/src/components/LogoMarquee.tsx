@@ -19,35 +19,23 @@ export default function LogoMarquee() {
     { name: 'CPS Energy', logo: cpsEnergyLogo },
   ];
 
+  const marqueeClients = [...clients, ...clients];
+
   return (
     <div className="w-full overflow-hidden bg-muted/30 py-8 border-y border-border">
-      <div className="flex items-center">
-        <div className="flex animate-marquee gap-8 items-center shrink-0">
-          {clients.map((client, index) => (
-            <div
-              key={`group1-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
-            >
-              <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-          {clients.map((client, index) => (
-            <div
-              key={`group2-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0 ml-8"
-            >
-              <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="flex w-max animate-marquee gap-8 items-center">
+        {marqueeClients.map((client, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+          >
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
