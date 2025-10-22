@@ -4,7 +4,7 @@ import ibmLogo from '@assets/IBM Official Logo HD_1761094996486.jpeg';
 import usaaLogo from '@assets/USAA Logo Horizontal_1761095018160.png';
 import harlandClarkeLogo from '@assets/Harland Clarke Bank Cheque Service_1761094996485.png';
 import tamuccLogo from '@assets/TAMUCC Logo_1761095018159.png';
-import utHealthLogo from '@assets/ut sa_1761095018160.jpg';
+import utHealthLogo from '@assets/pngfind.com-university-of-texas-logo-6451175_1761095426091.png';
 import argoLogo from '@assets/New Argo Logo_1761094996486.png';
 
 interface LogoWallProps {
