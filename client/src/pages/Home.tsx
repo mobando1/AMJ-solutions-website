@@ -4,6 +4,7 @@ import LogoWall from '@/components/LogoWall';
 import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import CalendlyButtonModal from '@/components/CalendlyButtonModal';
+import { Button } from '@/components/ui/button';
 import { Shield, Award, Users, Lock, Star, Mic, TrendingUp } from 'lucide-react';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
@@ -62,22 +63,22 @@ export default function Home() {
     {
       icon: Award,
       title: '30+ Years Experience',
-      description: 'Three decades advising C-suite executives through the most challenging moments in business.',
+      description: 'Three decades advising Fortune 500 C-suite executives through their most challenging moments.',
     },
     {
       icon: Shield,
-      title: 'High-Impact Crisis Management',
-      description: 'Proven track record managing crises that threatened major corporations\' reputations.',
+      title: '500+ Crises Resolved',
+      description: 'Successfully managed data breaches, leadership transitions, and regulatory challenges with zero reputation damage.',
     },
     {
       icon: Users,
-      title: 'Executive-Level Training',
-      description: 'Hundreds of executives trained to communicate with confidence and authenticity.',
+      title: '300+ Executives Trained',
+      description: 'Media training and executive coaching delivered to senior leaders across healthcare, finance, and energy sectors.',
     },
     {
       icon: Lock,
-      title: 'Absolute Confidentiality',
-      description: 'White-glove service with the discretion expected at the highest levels.',
+      title: '100% Confidentiality',
+      description: 'Every engagement protected under strict NDA. Your reputation is safe with us.',
     },
   ];
 
@@ -91,18 +92,17 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-              Strategic Communications for High-Stakes Moments
+              When Your Reputation Is On The Line, We Respond Within Hours
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              Expert crisis communications, reputation management, and executive media training for
-              organizations facing their most critical challenges.
+              Crisis communications and reputation management for Fortune 500 executives. 30 years protecting brands during data breaches, leadership transitions, and regulatory challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <CalendlyButtonModal size="lg" data-testid="hero-cta" />
+              <CalendlyButtonModal size="lg" buttonText="Get Rapid Response Now" data-testid="hero-cta" />
               <a href="/contact">
-                <button className="px-6 py-3 text-base font-medium border border-border rounded-md hover-elevate active-elevate-2 transition-all" data-testid="button-contact">
-                  Contact Us
-                </button>
+                <Button variant="outline" size="lg" data-testid="button-contact">
+                  Email Us
+                </Button>
               </a>
             </div>
           </div>
