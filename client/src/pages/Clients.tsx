@@ -3,6 +3,9 @@ import LogoWall from '@/components/LogoWall';
 import Testimonial from '@/components/Testimonial';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
+import hannahAvatar from '@assets/generated_images/Hannah_Morales_professional_headshot_0ca2addb.png';
+import tedAvatar from '@assets/generated_images/Ted_Johnson_professional_headshot_463819f3.png';
+import lorenaAvatar from '@assets/generated_images/Lorena_Rodriguez_professional_headshot_a1c5c27b.png';
 
 export default function Clients() {
   const caseStudies = [
@@ -39,18 +42,21 @@ export default function Clients() {
         'AMJ has done a great job bringing structure and order to a challenging group of stakeholders. We are happy with all that they have accomplished with our company.',
       author: 'Hannah Morales',
       role: 'Senior Director',
+      avatar: hannahAvatar,
     },
     {
       quote:
         'AMJ Solutions Group helped us navigate a complex program transition with clarity and professionalism. Their strategic insight was critical to our success.',
       author: 'Ted Johnson',
       role: 'Director of Communications',
+      avatar: tedAvatar,
     },
     {
       quote:
         'Ana and her team were essential during our crisis response activation. Their calm leadership and precise messaging kept our stakeholders informed and confident.',
       author: 'Lorena Rodriguez',
       role: 'Director of Emergency Management',
+      avatar: lorenaAvatar,
     },
   ];
 
