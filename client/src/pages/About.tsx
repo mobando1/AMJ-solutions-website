@@ -48,7 +48,7 @@ export default function About() {
         </div>
       </section>
 
-      <Section className="bg-background">
+      <Section className="bg-background py-10 sm:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
@@ -97,7 +97,7 @@ export default function About() {
         </div>
       </Section>
 
-      <Section className="bg-card">
+      <Section className="bg-card py-10 sm:py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
             Our Methodology
@@ -121,7 +121,7 @@ export default function About() {
         </div>
       </Section>
 
-      <Section className="bg-background">
+      <Section className="bg-background py-10 sm:py-12">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block mb-6">
             <img
