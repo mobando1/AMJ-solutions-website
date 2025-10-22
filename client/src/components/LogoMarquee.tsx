@@ -21,8 +21,8 @@ export default function LogoMarquee() {
 
   return (
     <div className="w-full overflow-hidden bg-muted/30 py-8 border-y border-border">
-      <div className="relative flex gap-8">
-        <div className="flex animate-marquee gap-8 items-center min-w-full shrink-0">
+      <div className="relative flex">
+        <div className="flex animate-marquee gap-8 items-center min-w-full shrink-0 pr-8">
           {clients.map((client, index) => (
             <div
               key={`first-${index}`}
