@@ -6,10 +6,10 @@ import Testimonial from '@/components/Testimonial';
 import CalendlyButtonModal from '@/components/CalendlyButtonModal';
 import { Shield, Award, Users, Lock } from 'lucide-react';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
-import crisisIcon from '@assets/generated_images/Crisis_communications_shield_icon_73738f6d.png';
-import reputationIcon from '@assets/generated_images/Reputation_management_star_icon_66701172.png';
-import mediaIcon from '@assets/generated_images/Media_training_microphone_icon_bd9bdb4b.png';
-import coachingIcon from '@assets/generated_images/Executive_coaching_person_icon_6b68acf7.png';
+import crisisIcon from '@assets/generated_images/Crisis_shield_icon_transparent_fbe711fe.png';
+import reputationIcon from '@assets/generated_images/Reputation_star_icon_transparent_9ec0ea60.png';
+import mediaIcon from '@assets/generated_images/Media_microphone_icon_transparent_36b57055.png';
+import coachingIcon from '@assets/generated_images/Coaching_growth_icon_transparent_4702f18b.png';
 
 export default function Home() {
   const services = [
