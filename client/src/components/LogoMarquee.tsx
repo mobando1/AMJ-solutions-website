@@ -21,31 +21,31 @@ export default function LogoMarquee() {
 
   return (
     <div className="w-full overflow-hidden bg-muted/30 py-8 border-y border-border">
-      <div className="relative flex">
-        <div className="flex animate-marquee gap-12 items-center">
+      <div className="relative flex gap-12">
+        <div className="flex animate-marquee gap-12 items-center min-w-full shrink-0">
           {clients.map((client, index) => (
             <div
               key={`first-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0 w-32"
             >
               <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto max-w-full object-contain"
               />
             </div>
           ))}
         </div>
-        <div className="flex animate-marquee gap-12 items-center" aria-hidden="true">
+        <div className="flex animate-marquee gap-12 items-center min-w-full shrink-0" aria-hidden="true">
           {clients.map((client, index) => (
             <div
               key={`second-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0 w-32"
             >
               <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto max-w-full object-contain"
               />
             </div>
           ))}
