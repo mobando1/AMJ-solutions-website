@@ -35,8 +35,8 @@ export default function About() {
 
   return (
     <div>
-      <Section className="bg-card">
-        <div className="text-center mb-12">
+      <Section className="bg-card py-12 sm:py-16">
+        <div className="text-center">
           <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
             About Ana Nelson
           </h1>
