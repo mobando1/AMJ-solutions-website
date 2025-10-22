@@ -8,7 +8,7 @@ import { Shield, Award, Users, Lock, Star, Mic, TrendingUp } from 'lucide-react'
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
 import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
-import lorenaAvatar from '@assets/generated_images/Lorena_natural_portrait_4b420874.png';
+import lorenaAvatar from '@assets/generated_images/Lorena_angled_natural_portrait_aa4a39d4.png';
 
 export default function Home() {
   const services = [
