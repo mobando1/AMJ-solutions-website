@@ -48,7 +48,7 @@ export default function About() {
         </div>
       </section>
 
-      <Section className="bg-background py-10 sm:py-12">
+      <Section className="bg-background py-6 sm:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
@@ -97,8 +97,8 @@ export default function About() {
         </div>
       </Section>
 
-      <Section className="bg-card py-10 sm:py-12">
-        <div className="text-center mb-12">
+      <Section className="bg-card py-6 sm:py-8">
+        <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
             Our Methodology
           </h2>
@@ -121,17 +121,17 @@ export default function About() {
         </div>
       </Section>
 
-      <Section className="bg-background py-10 sm:py-12">
+      <Section className="bg-background py-6 sm:py-8">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block mb-6">
+          <div className="inline-block mb-4">
             <img
               src={butterflyImage}
               alt="Transformation symbol"
-              className="h-20 w-20 opacity-80"
+              className="h-16 w-16 opacity-80"
               data-testid="img-butterfly"
             />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3">
             Transformation Through Communication
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
