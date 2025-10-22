@@ -1,0 +1,295 @@
+# PROMPT FINAL PARA REPLIT/BOLT – REDISEÑO `AMJ Solutions Group`
+
+## Objetivo
+
+Construir un sitio web corporativo **moderno, elegante y creíble** para **AMJ Solutions Group** (consultora de comunicación corporativa, manejo de crisis y reputación, con sede en Boca Ratón, Florida, fundada por **Ana Nelson**). El sitio debe transmitir **autoridad**, **claridad** y **confianza**, optimizado para **mobile-first** y SEO básico.
+
+> **Fuente de contenidos**: Usa **todo el copy** y datos (email, teléfono, dirección, servicios, biografía, etc.) **desde el archivo que subiré a este proyecto** (`/content/amj_copy.md`) o, si se provee como texto en el prompt de ejecución, **parsea** ese texto y distribúyelo en las secciones correspondientes. **No inventes datos** si faltan: utiliza placeholders claramente marcados.
+
+> **Activos**: Subiré el **logo** en SVG/PNG a `/public/brand/` y los **logos de clientes** (SVG o PNG transparente) a `/public/clients/`.
+
+---
+
+## Stack técnico (preferido)
+
+* **Next.js 14** (App Router) + **TypeScript**
+* **Tailwind CSS** (con `@tailwindcss/typography` y `@tailwindcss/forms`)
+* **Shadcn/ui** componentes básicos (botones, cards, dialog) – opcional
+* **next-seo** para metatags por página
+* **next/image** para optimización de imágenes
+* **ESLint + Prettier**
+* **Vercel-ready** (config de `headers`, `redirects` si aplica)
+
+Si no es posible Next.js, generar una variante **Vite + React + TS** con estructura equivalente y comentarios de dónde ajustar.
+
+---
+
+## Arquitectura de información (páginas y secciones)
+
+### 1) **Home** (`/`)
+
+* **Hero** con claim de autoridad (extraído de `amj_copy.md` o placeholder), subtítulo orientado a resultados y **CTA primario**: "**Book a Consultation**" (abre **Calendly modal**; ver componente más abajo).
+* **Servicios en highlights** (4–6 tarjetas): *Crisis Communications, Reputation Management, Media Training, Executive Coaching, Public Affairs/Stakeholder, Internal Communications* (ajustar a lo que venga en el copy). Cada tarjeta: título, 1–2 bullets de valor, link a `/services#slug`.
+* **Logo Wall de clientes** (usar imágenes de `/public/clients/` con `alt` accesibles): Truist, IBM, USAA, Harland Clark, Texas A&M University – Corpus Christi, CPS Energy, UT Health, Argo Group (cargar todas las que se suban al folder).
+* **Bloque "Why AMJ"**: 3–4 columnas con diferenciales (experiencia 30+ años, manejo de crisis de alto impacto, training ejecutivo, confidencialidad). Contenido sale de `amj_copy.md`.
+* **Testimonio destacado** (si existe en `amj_copy.md`).
+* **CTA Secundario**: "Contact Us" (anchor a `/contact`).
+
+### 2) **About** (`/about`)
+
+* **Bio de Ana Nelson** (foto de headshot en `/public/brand/headshot.jpg` si existe): trayectoria, sectores, hitos, enfoque.
+* **Enfoque/Metodología** en 3–5 pasos (descubrir → estrategia → ejecución → media/training → evaluación).
+* **Elemento simbólico (opcional)**: **mariposa** como metáfora de transformación. Usar un **ícono minimalista** (SVG simple) y 1 breve párrafo explicativo si el copy lo menciona; si no, dejar comentado como opcional.
+
+### 3) **Services** (`/services`)
+
+* **Intro** con promesa clara y nota de confidencialidad.
+* **Sección por servicio** (anchor-navegable):
+
+  * **Crisis Communications**
+  * **Reputation Management**
+  * **Media Training**
+  * **Executive Coaching**
+  * (Opc.) **Public Affairs / Stakeholder Engagement**
+  * (Opc.) **Internal Communications**
+    Cada bloque: descripción breve (extraer de `amj_copy.md`), 3 bullets de outcomes, CTA pequeño a **Calendly**.
+
+### 4) **Case Studies / Clients** (`/clients` o `/case-studies`)
+
+* **Logo Wall** (grid responsive) con los logos subidos.
+* **Case Snippets** (si el copy trae casos; si no, placeholder): *Reto → Enfoque → Resultado*.
+* **Quotes/Testimonials** si existen.
+
+### 5) **Contact** (`/contact`)
+
+* **Formulario profesional** (name, email, company, role, service of interest [select], message). Acción: placeholder `POST /api/contact` con validación frontend y estados (sending, success, error).
+* **Calendly inline embed** (debajo del formulario) usando `CALENDLY_URL` (leer de env, y si no existe, placeholder visible con nota).
+* **Datos de contacto** (email, ciudad/estado, LinkedIn). Extraer de `amj_copy.md`.
+
+### 6) **Páginas auxiliares**
+
+* **/privacy** y **/terms** (placeholders corporativos editables)
+* **/404** minimal corporativo
+* **robots.txt** y **sitemap.xml** generados automáticamente
+
+---
+
+## Estilo visual
+
+* **Tono**: profesional, elegante, ejecutivo, minimalista.
+* **Paleta sugerida** (editable):
+
+  * `--brand-bg`: `#FFFFFF`
+  * `--brand-text`: `#1F2937` (gris muy oscuro)
+  * `--brand-accent`: `#1C3D4F` (azul petróleo) **o** `#0F4C3A` (verde sobrio) – usar **una** de acento
+  * `--brand-muted`: `#6B7280`
+  * `--brand-border`: `#E5E7EB`
+* **Tipografía**: `Poppins` o `Lato` (Google Fonts). Títulos semi-bold; cuerpo regular; interlineado cómodo (1.6–1.8).
+* **Fotografía**: fondos neutros/corporativos; desaturados sutiles; recortes limpios.
+* **Iconografía**: minimal, trazo fino.
+* **Micro-interacciones**: fades/scale muy sutiles (duración 150–200ms). No obstaculizar la lectura.
+
+---
+
+## Componentes clave
+
+### `CalendlyButtonModal`
+
+* Botón primario que abre **Dialog** con **embed de Calendly** (`CALENDLY_URL`).
+* Fallback: si no hay URL, el botón muestra tooltip "Calendly URL pending".
+
+### `LogoWall`
+
+* Lee todas las imágenes de `/public/clients/*` y rinde un **grid responsive** (2–4–6 columnas según breakpoint).
+* Cada logo con `next/image`, `alt` descriptivo (tomar del nombre de archivo a texto legible).
+* **Grayscale** al reposo y **fade-in color** al hover (opcional).
+
+### `ServiceCard`
+
+* Título, breve descripción (2–3 líneas), bullets de outcomes, CTA a Calendly.
+
+### `ContactForm`
+
+* Validación con `zod` + `react-hook-form`.
+* Estados de envío; **no** enviar a ningún servicio externo (placeholder).
+* Accesible: labels, `aria-live` para mensajes de estado.
+
+---
+
+## SEO básico y metadatos
+
+* **next-seo** por página (title ≤ 60, description 150–160).
+* **Open Graph** y **Twitter Card** (`summary_large_image`) con `og:image` desde `/public/og/og-default.jpg`.
+* **Favicons**: 32/48/64 y `site.webmanifest`.
+* **Schema.org**:
+
+  * `Organization` (AMJ Solutions Group)
+  * `Person` (Ana Nelson, `worksFor` AMJ)
+  * `Service` por cada servicio principal
+  * (Opc.) `FAQPage` si agregamos sección de preguntas
+* **URLs limpias** y **slugs** kebab-case para anchors de servicios.
+
+---
+
+## Accesibilidad & performance
+
+* Contraste mínimo **WCAG AA** (usa utilidad Tailwind para contrastes).
+* Estados de `:focus` visibles y navegación por teclado.
+* `alt` en todas las imágenes (logos incluidos).
+* `next/image` con tamaños responsivos (`sizes`) y `loading="lazy"` por defecto.
+* Fuentes cargadas con `display: swap`; preconnect a Google Fonts.
+
+---
+
+## Responsive (desktop + mobile)
+
+* **Mobile-first**:
+
+  * Hero con tipografía que no rompa (clamp).
+  * Grids colapsan a 1 columna; paddings generosos (`px-4`/`px-6`).
+  * Botón Calendly **sticky** opcional en mobile (bottom bar) – pointer large.
+* **Desktop**:
+
+  * Máximo ancho `max-w-screen-xl`.
+  * Secciones con `py-20` aprox.; jerarquía clara de titulares.
+
+---
+
+## Datos de clientes (para Logo Wall)
+
+Cargar los archivos en `/public/clients/` con nombres legibles para generar `alt` automáticamente. Lista inicial a esperar (no incrustar imágenes en este prompt):
+
+* **Truist** → `/public/clients/truist.svg|png`
+* **IBM** → `/public/clients/ibm.svg|png`
+* **USAA** → `/public/clients/usaa.svg|png`
+* **Harland Clark** → `/public/clients/harland-clark.svg|png`
+* **Texas A&M University – Corpus Christi** → `/public/clients/texas-am-cc.svg|png`
+* **CPS Energy** → `/public/clients/cps-energy.svg|png`
+* **UT Health** → `/public/clients/ut-health.svg|png`
+* **Argo Group** → `/public/clients/argo-group.svg|png`
+
+> Si existen más logos, colócalos en la misma carpeta y el componente `LogoWall` debe listarlos dinámicamente.
+
+---
+
+## Variables y placeholders
+
+* `CALENDLY_URL` (env). Si falta, mostrar aviso en UI.
+* `CONTACT_EMAIL`, `CONTACT_PHONE` (tomar de `amj_copy.md`; si faltan, placeholders visibles en `/contact`).
+* `SOCIAL_LINKEDIN` (opcional).
+
+---
+
+## Estructura de archivos sugerida
+
+```
+/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ globals.css
+│  ├─ page.tsx                 # Home
+│  ├─ about/page.tsx
+│  ├─ services/page.tsx
+│  ├─ clients/page.tsx         # o case-studies
+│  ├─ contact/page.tsx
+│  ├─ privacy/page.tsx
+│  ├─ terms/page.tsx
+│  ├─ api/contact/route.ts     # placeholder (no-op / console)
+│  └─ (components)/
+│     ├─ Header.tsx
+│     ├─ Footer.tsx
+│     ├─ CalendlyButtonModal.tsx
+│     ├─ LogoWall.tsx
+│     ├─ ServiceCard.tsx
+│     ├─ Testimonial.tsx
+│     └─ Section.tsx
+├─ content/
+│  └─ amj_copy.md              # fuente de copy
+├─ public/
+│  ├─ brand/logo.svg
+│  ├─ brand/headshot.jpg       # opcional
+│  ├─ clients/...
+│  └─ og/og-default.jpg
+├─ next-seo.config.ts
+├─ tailwind.config.ts
+├─ postcss.config.js
+├─ tsconfig.json
+└─ .env.local.example
+```
+
+---
+
+## Lógica de ingestión de copy (`/content/amj_copy.md`)
+
+* Estructura recomendada del MD (si el archivo viene plano, parsear por headings):
+
+  * `# Company`
+  * `## Contact` (email, phone, city/state)
+  * `## Hero` (headline, subheadline, CTA label)
+  * `## About` (bio corta, bio extendida)
+  * `## Services` (lista con descripciones y bullets/resultados)
+  * `## Clients` (nota legal de uso de logos, si aplica)
+  * `## CaseStudies` (opcional)
+  * `## Testimonials` (opcional)
+  * `## SEO` (title/description por página si viene; si no, generar por defecto)
+* Crear un util `lib/content.ts` que lea el MD (en build time) y exponga objetos tipados para cada página. Si el MD no está, renderizar placeholders.
+
+---
+
+## Contenidos base (placeholders – sobrescribir con `amj_copy.md`)
+
+**Home**
+
+* Headline (placeholder): *Strategic Communications for High‑Stakes Moments.*
+* Subheadline (placeholder): *Crisis communications, reputation management, and executive media training led by Ana Nelson.*
+
+**About**
+
+* Párrafos placeholder con enfoque en 30+ años de experiencia, sectores corporativos y manejo confidencial.
+
+**Services**
+
+* 4–6 servicios con 3 bullets de outcomes cada uno (placeholder si faltan descripciones).
+
+**Contact**
+
+* Email/phone placeholders si no se proveen.
+
+---
+
+## Footer
+
+* Logo reducido, navegación secundaria (About, Services, Clients, Contact, Privacy, Terms), email de contacto, LinkedIn, © año dinámico.
+* Aviso de **confidencialidad** y **uso de logos** si corresponde.
+
+---
+
+## Analytics
+
+* Hook para **Google Analytics** / GTM vía env (`NEXT_PUBLIC_GA_ID`), con `pageview` en App Router.
+
+---
+
+## Tareas de implementación (checklist)
+
+1. Configurar Next.js + Tailwind + next-seo.
+2. Crear `lib/content.ts` para leer `amj_copy.md` y mapear fields.
+3. Implementar layout global (Header + Footer) y navegación sticky.
+4. Armar Home con Hero, Servicios highlight, LogoWall, Why AMJ, Testimonio y CTAs.
+5. Armar About con bio, enfoque/metodología y opcional mariposa.
+6. Armar Services con anchors y CTAs por bloque.
+7. Armar Clients/Case Studies con LogoWall dinámico + snippets.
+8. Armar Contact con formulario validado + Calendly inline y datos.
+9. Añadir páginas auxiliares (privacy, terms, 404) y `robots.txt`/`sitemap.xml`.
+10. Revisar accesibilidad (alt, labels, focus, contrastes) y responsive.
+11. Conectar Analytics vía env (opcional).
+12. Pulir microinteracciones y performance (LCP del Hero optimizado).
+
+---
+
+## Notas
+
+* No inventes datos; si faltan, muestra placeholders explícitos.
+* Mantén el tono ejecutivo y minimalista; evita adornos pesados.
+* Código limpio, componentes reutilizables y comentados.
+* Preparado para iteraciones de copy y assets sin tocar el layout.
