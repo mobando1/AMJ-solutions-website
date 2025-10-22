@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
 import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
-import lorenaAvatar from '@assets/generated_images/Lorena_angled_natural_portrait_aa4a39d4.png';
+import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.png';
 
 export default function Clients() {
   const caseStudies = [
