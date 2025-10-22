@@ -6,6 +6,7 @@ import harlandClarkeLogo from '@assets/Harland Clarke Bank Cheque Service_176109
 import tamuccLogo from '@assets/TAMUCC Logo_1761095018159.png';
 import utHealthLogo from '@assets/pngfind.com-university-of-texas-logo-6451175_1761095426091.png';
 import argoLogo from '@assets/New Argo Logo_1761094996486.png';
+import cpsEnergyLogo from '@assets/CPS Energy Logo_1761095488278.png';
 
 interface LogoWallProps {
   className?: string;
@@ -20,7 +21,7 @@ export default function LogoWall({ className = '' }: LogoWallProps) {
     { name: 'Texas A&M University', alt: 'Texas A&M University Corpus Christi logo', logo: tamuccLogo },
     { name: 'UT Health San Antonio', alt: 'UT Health San Antonio logo', logo: utHealthLogo },
     { name: 'Argo Group', alt: 'Argo Group logo', logo: argoLogo },
-    { name: 'CPS Energy', alt: 'CPS Energy logo', logo: null },
+    { name: 'CPS Energy', alt: 'CPS Energy logo', logo: cpsEnergyLogo },
   ];
 
   return (
