@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import amjLogo from '@assets/AMJ Solutions Group Logo_1761093965545.png';
+import butterflyLogo from '@assets/AMJ Solutions Group Butterfly Logo (1)_1761093965542.png';
 
 export default function Header() {
   const [location] = useLocation();
@@ -20,9 +20,10 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-background border-b border-border">
       <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/" data-testid="link-home">
-              <img src={amjLogo} alt="AMJ Solutions Group" className="h-10" />
+          <div className="flex items-center gap-3">
+            <Link href="/" data-testid="link-home" className="flex items-center gap-3">
+              <img src={butterflyLogo} alt="AMJ Butterfly Logo" className="h-10 w-10 object-contain" />
+              <span className="text-xl font-semibold text-foreground">AMJ Solutions Group</span>
             </Link>
           </div>
 
