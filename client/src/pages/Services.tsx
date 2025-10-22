@@ -86,20 +86,22 @@ export default function Services() {
 
   return (
     <div>
-      <Section className="bg-card">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-6">
-            Strategic Communications Services
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Comprehensive solutions for your most critical communications challenges. Every
-            engagement is conducted with the utmost discretion and confidentiality.
-          </p>
-          <p className="text-sm text-muted-foreground italic">
-            All client work is protected by strict confidentiality agreements
-          </p>
+      <section className="bg-card py-6 sm:py-8">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
+              Strategic Communications Services
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-3">
+              Comprehensive solutions for your most critical communications challenges. Every
+              engagement is conducted with the utmost discretion and confidentiality.
+            </p>
+            <p className="text-sm text-muted-foreground italic">
+              All client work is protected by strict confidentiality agreements
+            </p>
+          </div>
         </div>
-      </Section>
+      </section>
 
       {services.map((service, index) => {
         const Icon = service.icon;
