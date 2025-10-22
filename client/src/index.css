@@ -359,13 +359,14 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% - 2rem));
+      transform: translateX(-33.333%);
     }
   }
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
     display: flex;
+    width: max-content;
   }
 
   .animate-marquee:hover {
