@@ -42,7 +42,7 @@ export default function About() {
               About Ana Nelson
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Over three decades of experience guiding organizations through their most critical moments
+              Over 25 years of combined leadership experience guiding organizations through their most critical moments
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function About() {
               Trusted Counsel for High-Stakes Communications
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Ana Nelson brings over 30 years of experience in corporate communications, crisis
+              Ana Nelson brings over 25 years of combined leadership experience in corporate communications, crisis
               management, and media relations. She has advised C-suite executives at Fortune 500
               companies through high-stakes situations including corporate crises, reputation
               threats, regulatory challenges, and transformative business moments.

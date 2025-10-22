@@ -62,23 +62,23 @@ export default function Home() {
   const whyAmj = [
     {
       icon: Award,
-      title: '30+ Years Experience',
-      description: 'Three decades advising Fortune 500 C-suite executives through their most challenging moments.',
+      title: '25+ Years Experience',
+      description: 'Over 25 years of combined leadership experience across federal, state, local government, and private sectors.',
     },
     {
       icon: Shield,
-      title: '500+ Crises Resolved',
-      description: 'Successfully managed data breaches, leadership transitions, and regulatory challenges with zero reputation damage.',
+      title: '18+ Departments',
+      description: 'Designed enterprise-wide crisis protocols for 18+ departments across multiple organizations.',
     },
     {
       icon: Users,
-      title: '300+ Executives Trained',
-      description: 'Media training and executive coaching delivered to senior leaders across healthcare, finance, and energy sectors.',
+      title: '$1.4M in Community Impact',
+      description: '$1.4M in giving across 19 community programs, demonstrating commitment to social responsibility.',
     },
     {
-      icon: Lock,
-      title: '100% Confidentiality',
-      description: 'Every engagement protected under strict NDA. Your reputation is safe with us.',
+      icon: TrendingUp,
+      title: '6 Major Integrations',
+      description: 'Led cultural integration of 6 companies under unified brand across 25 locations post-acquisition.',
     },
   ];
 
@@ -95,7 +95,7 @@ export default function Home() {
               When Your Reputation Is On The Line, We Respond Within Hours
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              Crisis communications and reputation management for Fortune 500 executives. 30 years protecting brands during data breaches, leadership transitions, and regulatory challenges.
+              Crisis communications and reputation management for Fortune 500 executives. Over 25 years protecting brands during data breaches, leadership transitions, and regulatory challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CalendlyButtonModal size="lg" buttonText="Get Rapid Response Now" data-testid="hero-cta" />
