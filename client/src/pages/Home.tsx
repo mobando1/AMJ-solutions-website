@@ -7,9 +7,9 @@ import CalendlyButtonModal from '@/components/CalendlyButtonModal';
 import { Shield, Award, Users, Lock } from 'lucide-react';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
 import crisisIcon from '@assets/generated_images/Crisis_shield_icon_transparent_fbe711fe.png';
-import reputationIcon from '@assets/generated_images/Reputation_star_icon_transparent_9ec0ea60.png';
-import mediaIcon from '@assets/generated_images/Media_microphone_icon_transparent_36b57055.png';
-import coachingIcon from '@assets/generated_images/Coaching_growth_icon_transparent_4702f18b.png';
+import reputationIcon from '@assets/generated_images/Gold_star_transparent_icon_594044c1.png';
+import mediaIcon from '@assets/generated_images/Microphone_transparent_icon_19be5303.png';
+import coachingIcon from '@assets/generated_images/Person_growth_transparent_icon_d3aecfec.png';
 
 export default function Home() {
   const services = [
