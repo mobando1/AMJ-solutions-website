@@ -127,7 +127,7 @@ export default function About() {
             <img
               src={butterflyImage}
               alt="Transformation symbol"
-              className="h-16 w-16 opacity-80"
+              className="h-24 w-24 opacity-80"
               data-testid="img-butterfly"
             />
           </div>
