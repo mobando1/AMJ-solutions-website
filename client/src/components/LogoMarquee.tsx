@@ -19,37 +19,23 @@ export default function LogoMarquee() {
     { name: 'CPS Energy', logo: cpsEnergyLogo },
   ];
 
+  const allClients = [...clients, ...clients];
+
   return (
     <div className="w-full overflow-hidden bg-muted/30 py-8 border-y border-border">
-      <div className="flex whitespace-nowrap">
-        <div className="flex animate-marquee gap-8 items-center shrink-0 pl-8">
-          {clients.map((client, index) => (
-            <div
-              key={`first-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
-            >
-              <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex animate-marquee gap-8 items-center shrink-0 pl-8" aria-hidden="true">
-          {clients.map((client, index) => (
-            <div
-              key={`second-${index}`}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
-            >
-              <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="flex animate-marquee gap-8 items-center">
+        {allClients.map((client, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+          >
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
