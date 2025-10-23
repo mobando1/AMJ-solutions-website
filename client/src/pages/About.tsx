@@ -1,7 +1,7 @@
 import Section from '@/components/Section';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
-import headshotImage from '@assets/generated_images/Ana_Nelson_professional_headshot_0695eefe.png';
+import headshotImage from '@assets/Ana Nelson FluxLoRA Image_1761180719803.jpg';
 import butterflyImage from '@assets/generated_images/Transformation_butterfly_icon_a1ef4cd2.png';
 
 export default function About() {
