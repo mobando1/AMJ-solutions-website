@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import butterflyLogo from '@assets/AMJ Solutions Group Butterfly Logo (1)_1761093965542.png';
+import butterflyLogo from '@assets/ChatGPT Image Oct 22 2025 from Crear Prompt_1761182134105.png';
 
 export default function Header() {
   const [location] = useLocation();
