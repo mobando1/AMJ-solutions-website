@@ -35,7 +35,7 @@ export default function About() {
 
   return (
     <div>
-      <section className="bg-card py-6 sm:py-8">
+      <section className="bg-card py-4 sm:py-5">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-2">
@@ -48,7 +48,7 @@ export default function About() {
         </div>
       </section>
 
-      <Section className="bg-background py-4 sm:py-6">
+      <Section className="bg-background py-4 sm:py-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <img
