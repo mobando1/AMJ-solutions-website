@@ -38,7 +38,7 @@ export default function About() {
       <section className="bg-card py-6 sm:py-8">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-3">
+            <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-2">
               About Ana Nelson
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -48,8 +48,8 @@ export default function About() {
         </div>
       </section>
 
-      <Section className="bg-background py-6 sm:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <Section className="bg-background py-4 sm:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <img
               src={headshotImage}
@@ -58,7 +58,7 @@ export default function About() {
               data-testid="img-ana-nelson"
             />
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h2 className="text-3xl font-semibold text-foreground">
               Trusted Counsel for High-Stakes Communications
             </h2>
