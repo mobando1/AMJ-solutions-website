@@ -29,7 +29,7 @@ export default function LogoWall({ className = '' }: LogoWallProps) {
       {clients.map((client, index) => (
         <Card
           key={index}
-          className="flex items-center justify-center p-8 transition-all duration-200 grayscale hover:grayscale-0 hover-elevate"
+          className="flex items-center justify-center p-8 transition-all duration-200 hover-elevate"
           data-testid={`logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
         >
           <div className="flex items-center justify-center h-16 w-full">
