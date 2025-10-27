@@ -228,7 +228,7 @@ export default function Home() {
       <Section className="bg-card">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-            Trusted by Leading Organizations
+            Leading Fortune 500 Companies
           </h2>
         </div>
         <LogoWall />
