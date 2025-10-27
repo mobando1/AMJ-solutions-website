@@ -75,9 +75,6 @@ export default function Clients() {
 
       <Section className="bg-background">
         <LogoWall />
-        <p className="text-sm text-muted-foreground text-center mt-8 italic">
-          Client logos used with permission. All engagements conducted under strict confidentiality.
-        </p>
       </Section>
 
       <Section className="bg-card">
