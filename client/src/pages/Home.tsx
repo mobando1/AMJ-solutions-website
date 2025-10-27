@@ -70,11 +70,8 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
               Helping Leaders Get Ahead of Risk—Or Lead Through It
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-6">
-              AMJ Solutions Group helps you lead with purpose, whether you're getting ahead of risk, or navigating it in real time.
-            </p>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
-              Led by Ana Nelson, our consulting firm brings more than 25 years of strategic leadership across defense, government, and private sectors. Let us help you optimize operations, navigate crises and communicate with confidence when it matters most.
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
+              We are the trusted advisors leaders call—before the storm hits and when the pressure is on. Complexity. Change. Crisis. That's our zone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
