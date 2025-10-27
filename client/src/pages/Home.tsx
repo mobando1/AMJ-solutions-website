@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw } from 'lucide-react';
 import { Link } from 'wouter';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
-import anaPortrait from '@assets/generated_images/Ana_Nelson_professional_portrait_68f970d3.png';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
 import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
 import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.png';
@@ -93,34 +92,18 @@ export default function Home() {
       <LogoMarquee />
 
       <Section className="bg-card">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-2 flex justify-center">
-            <div className="relative">
-              <img
-                src={anaPortrait}
-                alt="Ana Nelson, Founder & CEO of AMJ Solutions Group"
-                className="rounded-lg w-full max-w-sm shadow-lg"
-                data-testid="img-ana-portrait"
-              />
-            </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
+            <Award className="h-8 w-8 text-primary" />
           </div>
-          <div className="lg:col-span-3">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
+          </p>
+          <Link href="/about">
+            <Button variant="outline" size="lg" data-testid="button-meet-ana">
               Meet Ana Nelson
-            </h2>
-            <p className="text-lg text-primary font-medium mb-4">
-              Founder & CEO, AMJ Solutions Group
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed mb-4">
-              Led by Ana Nelson, AMJ Solutions Group brings more than 25 years of strategic leadership across defense, government, and private sectors.
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed mb-4">
-              Ana specializes in helping leaders optimize operations, navigate crises, and communicate with confidence when it matters most. Her experience spans crisis communications, reputation management, executive coaching, and strategic advisory services for organizations facing their most critical moments.
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Whether you're preparing for potential challenges or responding to an active crisis, Ana and her team provide the strategic counsel and hands-on support you need to protect your reputation and lead with purpose.
-            </p>
-          </div>
+            </Button>
+          </Link>
         </div>
       </Section>
 
