@@ -15,46 +15,22 @@ export default function Home() {
   const services = [
     {
       title: 'Crisis Communications',
-      description:
-        'Immediate, strategic response when your reputation is on the line. Navigate data breaches, leadership transitions, and public controversies with confidence.',
-      outcomes: [
-        'Rapid response protocols activated within hours',
-        'Clear, consistent messaging across all channels',
-        'Brand reputation protected and strengthened',
-      ],
+      description: 'Immediate response when reputation is on the line',
       icon: Shield,
     },
     {
       title: 'Reputation Management',
-      description:
-        'Proactive strategies to build, protect, and restore your organization\'s reputation through executive positioning and narrative development.',
-      outcomes: [
-        'Enhanced brand credibility and trust',
-        'Positive media coverage and thought leadership',
-        'Long-term reputation resilience',
-      ],
+      description: 'Proactive strategies to build and protect your brand',
       icon: Star,
     },
     {
       title: 'Media Training',
-      description:
-        'Prepare executives to confidently engage with media, investors, and stakeholders through hands-on training and scenario planning.',
-      outcomes: [
-        'Executives who communicate with clarity',
-        'Consistent on-brand messaging',
-        'Crisis-ready spokespeople',
-      ],
+      description: 'Prepare executives to engage with confidence',
       icon: Mic,
     },
     {
       title: 'Executive Coaching',
-      description:
-        'One-on-one coaching to help leaders sharpen communication skills, executive presence, and strategic thinking.',
-      outcomes: [
-        'Enhanced leadership presence and influence',
-        'Greater confidence in high-pressure situations',
-        'Authentic, compelling communication style',
-      ],
+      description: 'Sharpen leadership presence and strategic thinking',
       icon: TrendingUp,
     },
   ];
@@ -116,11 +92,8 @@ export default function Home() {
 
       <Section className="bg-background">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-4">
-            We are the trusted advisor leaders call before the storm to prepare, align, and communicate before the pressure hits; during organizational shifts, leadership transitions, or strategic inflection points to avoid costly disruptions and lead with foresight.
-          </p>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-6">
-            We are also the ones trusted by executive teams to provide fast analysis, clear messaging and confident leadership when brand reputation is on the line.
+            We are the trusted advisors leaders call—before the storm hits and when the pressure is on.
           </p>
           <p className="text-2xl sm:text-3xl font-semibold text-foreground">
             Complexity. Change. Crisis. That's our zone.
@@ -214,14 +187,21 @@ export default function Home() {
             Comprehensive communications solutions for your most critical moments
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               {...service}
-              onConsultationClick={() => console.log('Consultation clicked:', service.title)}
+              learnMoreUrl="/services"
             />
           ))}
+        </div>
+        <div className="text-center">
+          <a href="/services">
+            <Button size="lg" variant="default" data-testid="button-view-all-services">
+              View All Services
+            </Button>
+          </a>
         </div>
       </Section>
 
