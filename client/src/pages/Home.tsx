@@ -71,7 +71,7 @@ export default function Home() {
               Helping Leaders Get Ahead of Risk—Or Lead Through It
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              We are the trusted advisors leaders call before the storm hits and when the pressure is on.
+              AMJ Solutions Group helps you lead with purpose, whether you're getting ahead of risk or navigating it in real time. We are the trusted advisors leaders call before the storm hits and when the pressure is on.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
