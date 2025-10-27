@@ -67,9 +67,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/80" />
         <Section className="relative py-20 lg:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
               Helping Leaders Get Ahead of Risk—Or Lead Through It
             </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
+              We are the trusted advisors leaders call—before the storm hits and when the pressure is on.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button size="lg" data-testid="hero-cta">
@@ -88,36 +91,33 @@ export default function Home() {
 
       <LogoMarquee />
 
-      <Section className="bg-primary text-primary-foreground">
+      <Section className="bg-card">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg sm:text-xl leading-relaxed mb-6 opacity-95">
-            We are the trusted advisors leaders call—before the storm hits and when the pressure is on.
-          </p>
-          <p className="text-2xl sm:text-3xl font-semibold mb-8">
+          <p className="text-2xl sm:text-3xl font-semibold text-foreground mb-8">
             Complexity. Change. Crisis. That's our zone.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed mb-8 opacity-90">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
             Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
           </p>
           <Link href="/about">
-            <Button variant="secondary" size="lg" data-testid="button-meet-ana">
+            <Button variant="outline" size="lg" data-testid="button-meet-ana">
               Meet Ana Nelson
             </Button>
           </Link>
         </div>
       </Section>
 
-      <Section className="bg-background">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+      <Section className="bg-primary">
+        <div className="mb-12 text-center text-primary-foreground">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Key Moments to Reach Out
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto opacity-95">
             Whether you're planning ahead or responding in real time, we're here to help you lead with confidence
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 text-foreground">
           <div className="bg-card border border-border rounded-lg p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
