@@ -107,8 +107,9 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="bg-primary">
-        <div className="mb-12 text-center text-primary-foreground">
+      <Section className="relative bg-primary">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-card to-transparent pointer-events-none" />
+        <div className="mb-12 text-center text-primary-foreground relative">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Key Moments to Reach Out
           </h2>
