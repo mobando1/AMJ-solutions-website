@@ -67,12 +67,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/80" />
         <Section className="relative py-20 lg:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8">
               Helping Leaders Get Ahead of Risk—Or Lead Through It
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              We are the trusted advisors leaders call—before the storm hits and when the pressure is on. Complexity. Change. Crisis. That's our zone.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button size="lg" data-testid="hero-cta">
@@ -91,16 +88,19 @@ export default function Home() {
 
       <LogoMarquee />
 
-      <Section className="bg-card">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <Award className="h-8 w-8 text-primary" />
-          </div>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+      <Section className="bg-primary text-primary-foreground">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg sm:text-xl leading-relaxed mb-6 opacity-95">
+            We are the trusted advisors leaders call—before the storm hits and when the pressure is on.
+          </p>
+          <p className="text-2xl sm:text-3xl font-semibold mb-8">
+            Complexity. Change. Crisis. That's our zone.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed mb-8 opacity-90">
             Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
           </p>
           <Link href="/about">
-            <Button variant="outline" size="lg" data-testid="button-meet-ana">
+            <Button variant="secondary" size="lg" data-testid="button-meet-ana">
               Meet Ana Nelson
             </Button>
           </Link>
