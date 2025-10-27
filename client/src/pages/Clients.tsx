@@ -68,8 +68,7 @@ export default function Clients() {
             Trusted by Leading Organizations
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We are honored to have served Fortune 500 companies and leading institutions across
-            financial services, healthcare, energy, technology, and higher education.
+            Across multiple industries such as: financial services, healthcare, energy, technology, insurance and higher education
           </p>
         </div>
       </Section>
