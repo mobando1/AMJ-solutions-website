@@ -1,15 +1,4 @@
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {
@@ -19,177 +8,131 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  company: z.string().min(2, 'Company name is required'),
-  role: z.string().min(2, 'Role is required'),
-  serviceInterest: z.string().min(1, 'Please select a service'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+import { useState } from 'react';
 
 export default function ContactForm() {
-  const { toast } = useToast();
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      company: '',
-      role: '',
-      serviceInterest: '',
-      message: '',
-    },
-  });
-
-  const onSubmit = async (data: ContactFormData) => {
-    console.log('Form submitted:', data);
-    
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: 'Message sent successfully',
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    form.reset();
-  };
-
+  const [serviceInterest, setServiceInterest] = useState('');
+  const thankYouUrl = typeof window !== 'undefined' 
+    ? `${window.location.origin}/thank-you` 
+    : 'https://amjsolutionsgroup.com/thank-you';
+  
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
+    <form 
+      action="https://formsubmit.co/ana@amjsolutionsgroup.com" 
+      method="POST"
+      className="space-y-6"
+    >
+      <input type="hidden" name="_subject" value="New Contact Form Submission - AMJ Solutions Group" />
+      <input type="hidden" name="_next" value={thankYouUrl} />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="name" className="text-sm font-medium text-foreground">
+            Full Name <span className="text-destructive">*</span>
+          </label>
+          <Input
+            id="name"
             name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Full Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="John Doe" {...field} data-testid="input-name" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            type="text"
+            placeholder="John Doe"
+            required
+            data-testid="input-name"
           />
+        </div>
 
-          <FormField
-            control={form.control}
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-sm font-medium text-foreground">
+            Email Address <span className="text-destructive">*</span>
+          </label>
+          <Input
+            id="email"
             name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email Address</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="john.doe@company.com"
-                    {...field}
-                    data-testid="input-email"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            type="email"
+            placeholder="john.doe@company.com"
+            required
+            data-testid="input-email"
           />
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="company" className="text-sm font-medium text-foreground">
+            Company
+          </label>
+          <Input
+            id="company"
             name="company"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Company</FormLabel>
-                <FormControl>
-                  <Input placeholder="Company Name" {...field} data-testid="input-company" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="role"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Role</FormLabel>
-                <FormControl>
-                  <Input placeholder="Chief Communications Officer" {...field} data-testid="input-role" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            type="text"
+            placeholder="Company Name"
+            data-testid="input-company"
           />
         </div>
 
-        <FormField
-          control={form.control}
-          name="serviceInterest"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Service of Interest</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger data-testid="select-service">
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="crisis-communications">Crisis Communications</SelectItem>
-                  <SelectItem value="reputation-management">Reputation Management</SelectItem>
-                  <SelectItem value="media-training">Media Training</SelectItem>
-                  <SelectItem value="executive-coaching">Executive Coaching</SelectItem>
-                  <SelectItem value="public-affairs">Public Affairs & Stakeholder Engagement</SelectItem>
-                  <SelectItem value="internal-communications">Internal Communications</SelectItem>
-                  <SelectItem value="general-inquiry">General Inquiry</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="space-y-2">
+          <label htmlFor="role" className="text-sm font-medium text-foreground">
+            Role
+          </label>
+          <Input
+            id="role"
+            name="role"
+            type="text"
+            placeholder="Chief Communications Officer"
+            data-testid="input-role"
+          />
+        </div>
+      </div>
 
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Tell us about your communications needs and challenges..."
-                  className="min-h-[120px] resize-none"
-                  {...field}
-                  data-testid="input-message"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button
-          type="submit"
-          disabled={form.formState.isSubmitting}
-          className="w-full md:w-auto"
-          data-testid="button-submit"
+      <div className="space-y-2">
+        <label htmlFor="serviceInterest" className="text-sm font-medium text-foreground">
+          Service of Interest
+        </label>
+        <Select 
+          name="Service Interest" 
+          value={serviceInterest} 
+          onValueChange={setServiceInterest}
         >
-          {form.formState.isSubmitting ? (
-            'Sending...'
-          ) : (
-            <>
-              <Send className="h-4 w-4 mr-2" />
-              Send Message
-            </>
-          )}
-        </Button>
-      </form>
-    </Form>
+          <SelectTrigger data-testid="select-service">
+            <SelectValue placeholder="Select a service" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Crisis Communications">Crisis Communications</SelectItem>
+            <SelectItem value="Reputation Management">Reputation Management</SelectItem>
+            <SelectItem value="Media Training">Media Training</SelectItem>
+            <SelectItem value="Executive Coaching">Executive Coaching</SelectItem>
+            <SelectItem value="Public Affairs & Stakeholder Engagement">Public Affairs & Stakeholder Engagement</SelectItem>
+            <SelectItem value="Internal Communications">Internal Communications</SelectItem>
+            <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+          </SelectContent>
+        </Select>
+        <input type="hidden" name="Service Interest" value={serviceInterest} />
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-sm font-medium text-foreground">
+          Message <span className="text-destructive">*</span>
+        </label>
+        <Textarea
+          id="message"
+          name="message"
+          placeholder="Tell us about your communications needs and challenges..."
+          className="min-h-[120px] resize-none"
+          required
+          data-testid="input-message"
+        />
+      </div>
+
+      <Button
+        type="submit"
+        className="w-full md:w-auto"
+        data-testid="button-submit"
+      >
+        <Send className="h-4 w-4 mr-2" />
+        Send Message
+      </Button>
+    </form>
   );
 }

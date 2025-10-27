@@ -1,6 +1,7 @@
 import Section from '@/components/Section';
-import CalendlyButtonModal from '@/components/CalendlyButtonModal';
+import { Button } from '@/components/ui/button';
 import { Shield, Star, Mic, User, Users, MessageSquare } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Services() {
   const services = [
@@ -119,11 +120,14 @@ export default function Services() {
                 <p className="text-base text-muted-foreground leading-relaxed mb-6">
                   {service.description}
                 </p>
-                <CalendlyButtonModal
-                  buttonText="Schedule Consultation"
-                  variant="outline"
-                  data-testid={`button-consult-${service.id}`}
-                />
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    data-testid={`button-consult-${service.id}`}
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
               <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
                 <div className="bg-card border border-card-border rounded-lg p-8">
@@ -151,14 +155,18 @@ export default function Services() {
             Let's Discuss Your Communications Needs
           </h2>
           <p className="text-lg mb-8 opacity-90">
-            Every organization faces unique challenges. Schedule a confidential consultation to
+            Every organization faces unique challenges. Contact us for a confidential consultation to
             explore how we can help.
           </p>
-          <CalendlyButtonModal
-            variant="secondary"
-            size="lg"
-            buttonText="Book Your Consultation"
-          />
+          <Link href="/contact">
+            <Button
+              variant="secondary"
+              size="lg"
+              data-testid="button-contact-cta"
+            >
+              Get In Touch
+            </Button>
+          </Link>
         </div>
       </Section>
     </div>

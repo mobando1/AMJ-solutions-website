@@ -3,9 +3,9 @@ import ServiceCard from '@/components/ServiceCard';
 import LogoWall from '@/components/LogoWall';
 import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
-import CalendlyButtonModal from '@/components/CalendlyButtonModal';
 import { Button } from '@/components/ui/button';
 import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw } from 'lucide-react';
+import { Link } from 'wouter';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
 import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
@@ -77,12 +77,16 @@ export default function Home() {
               Led by Ana Nelson, our consulting firm brings more than 25 years of strategic leadership across defense, government, and private sectors. Let us help you optimize operations, navigate crises and communicate with confidence when it matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <CalendlyButtonModal size="lg" buttonText="Get Rapid Response Now" data-testid="hero-cta" />
-              <a href="/contact">
-                <Button variant="outline" size="lg" data-testid="button-contact">
-                  Email Us
+              <Link href="/contact">
+                <Button size="lg" data-testid="hero-cta">
+                  Contact Us Now
                 </Button>
-              </a>
+              </Link>
+              <Link href="/services">
+                <Button variant="outline" size="lg" data-testid="button-services">
+                  View Our Services
+                </Button>
+              </Link>
             </div>
           </div>
         </Section>
@@ -270,11 +274,15 @@ export default function Home() {
           <p className="text-lg mb-8 opacity-90">
             Get expert strategic communications counsel for your organization
           </p>
-          <CalendlyButtonModal
-            variant="secondary"
-            size="lg"
-            buttonText="Schedule Your Consultation"
-          />
+          <Link href="/contact">
+            <Button
+              variant="secondary"
+              size="lg"
+              data-testid="button-contact-cta"
+            >
+              Contact Us Today
+            </Button>
+          </Link>
         </div>
       </Section>
     </div>
