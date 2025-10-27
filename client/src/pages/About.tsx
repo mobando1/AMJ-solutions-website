@@ -77,7 +77,7 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  Advised executives at Truist, IBM, USAA, and other leading organizations
+                  Advised executives at leading Fortune 500 companies
                 </p>
               </div>
               <div className="flex items-start gap-3">
