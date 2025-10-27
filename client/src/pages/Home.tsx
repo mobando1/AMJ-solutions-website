@@ -230,9 +230,6 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
             Trusted by Leading Organizations
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We are honored to serve Fortune 500 companies across industries
-          </p>
         </div>
         <LogoWall />
       </Section>
