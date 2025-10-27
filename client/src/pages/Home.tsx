@@ -63,7 +63,7 @@ export default function Home() {
     {
       icon: Award,
       title: '25+ Years Experience',
-      description: 'Over 25 years of combined leadership experience across federal, state, local government, and private sectors.',
+      description: 'More than 25 years of combined leadership experience across federal, state, local government, and private sectors.',
     },
     {
       icon: Shield,
@@ -98,7 +98,7 @@ export default function Home() {
               AMJ Solutions Group helps you lead with purpose, whether you're getting ahead of risk, or navigating it in real time.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
-              Led by Ana Nelson, our consulting firm brings over 25 years of strategic leadership across defense, government, and private sectors. Let us help you optimize operations, navigate crises and communicate with confidence when it matters most.
+              Led by Ana Nelson, our consulting firm brings more than 25 years of strategic leadership across defense, government, and private sectors. Let us help you optimize operations, navigate crises and communicate with confidence when it matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CalendlyButtonModal size="lg" buttonText="Get Rapid Response Now" data-testid="hero-cta" />
