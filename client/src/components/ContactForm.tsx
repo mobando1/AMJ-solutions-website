@@ -8,26 +8,86 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Send } from 'lucide-react';
+import { Send, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactForm() {
   const [serviceInterest, setServiceInterest] = useState('');
-  const thankYouUrl = typeof window !== 'undefined' 
-    ? `${window.location.origin}/thank-you` 
-    : 'https://amjsolutionsgroup.com/thank-you';
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ana@amjsolutionsgroup.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          company: formData.get('company') || 'Not provided',
+          role: formData.get('role') || 'Not provided',
+          'Service Interest': formData.get('Service Interest') || 'Not specified',
+          message: formData.get('message'),
+          _subject: 'New Contact Form Submission - AMJ Solutions Group',
+          _captcha: 'false',
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        form.reset();
+        setServiceInterest('');
+      } else {
+        setError('There was an error sending your message. Please try again.');
+      }
+    } catch (err) {
+      setError('There was an error sending your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <div className="text-center py-12 space-y-4">
+        <div className="flex justify-center">
+          <CheckCircle2 className="h-16 w-16 text-primary" />
+        </div>
+        <h3 className="text-2xl font-semibold text-foreground">
+          Message Sent Successfully!
+        </h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          Thank you for reaching out. We've received your message and will get back to you within 24 hours.
+        </p>
+        <Button 
+          onClick={() => setIsSuccess(false)}
+          variant="outline"
+          className="mt-4"
+          data-testid="button-send-another"
+        >
+          Send Another Message
+        </Button>
+      </div>
+    );
+  }
   
   return (
     <form 
-      action="https://formsubmit.co/ana@amjsolutionsgroup.com" 
-      method="POST"
+      onSubmit={handleSubmit}
       className="space-y-6"
     >
-      <input type="hidden" name="_subject" value="New Contact Form Submission - AMJ Solutions Group" />
-      <input type="hidden" name="_next" value={thankYouUrl} />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -39,6 +99,7 @@ export default function ContactForm() {
             type="text"
             placeholder="John Doe"
             required
+            disabled={isSubmitting}
             data-testid="input-name"
           />
         </div>
@@ -53,6 +114,7 @@ export default function ContactForm() {
             type="email"
             placeholder="john.doe@company.com"
             required
+            disabled={isSubmitting}
             data-testid="input-email"
           />
         </div>
@@ -68,6 +130,7 @@ export default function ContactForm() {
             name="company"
             type="text"
             placeholder="Company Name"
+            disabled={isSubmitting}
             data-testid="input-company"
           />
         </div>
@@ -81,6 +144,7 @@ export default function ContactForm() {
             name="role"
             type="text"
             placeholder="Chief Communications Officer"
+            disabled={isSubmitting}
             data-testid="input-role"
           />
         </div>
@@ -94,6 +158,7 @@ export default function ContactForm() {
           name="Service Interest" 
           value={serviceInterest} 
           onValueChange={setServiceInterest}
+          disabled={isSubmitting}
         >
           <SelectTrigger data-testid="select-service">
             <SelectValue placeholder="Select a service" />
@@ -121,17 +186,25 @@ export default function ContactForm() {
           placeholder="Tell us about your communications needs and challenges..."
           className="min-h-[120px] resize-none"
           required
+          disabled={isSubmitting}
           data-testid="input-message"
         />
       </div>
 
+      {error && (
+        <div className="text-destructive text-sm bg-destructive/10 p-3 rounded-md" data-testid="error-message">
+          {error}
+        </div>
+      )}
+
       <Button
         type="submit"
         className="w-full md:w-auto"
+        disabled={isSubmitting}
         data-testid="button-submit"
       >
         <Send className="h-4 w-4 mr-2" />
-        Send Message
+        {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
     </form>
   );
