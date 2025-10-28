@@ -108,8 +108,8 @@ export default function Home() {
       </Section>
 
       <Section className="relative bg-primary">
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-card/40 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-card to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent pointer-events-none" />
         <div className="mb-12 text-center text-primary-foreground relative">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Key Moments to Reach Out
