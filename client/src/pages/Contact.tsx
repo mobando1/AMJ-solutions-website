@@ -78,7 +78,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-sm font-semibold text-foreground mb-1">LinkedIn</h3>
                     <a
-                      href="https://linkedin.com/company/amj-solutions-group"
+                      href="https://linkedin.com/in/ana-joanicot-nelson-42a63718"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
