@@ -16,6 +16,21 @@ app.use(express.json({
 }));
 app.use(express.urlencoded({ extended: false }));
 
+// Redirect development URLs to production domain
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  const productionDomain = 'www.amjsolutionsgroup.com';
+  
+  // If accessing via development domain, redirect to production
+  if (host.includes('replit.dev') || host.includes('replit.app')) {
+    const protocol = req.secure || req.get('x-forwarded-proto') === 'https' ? 'https' : 'https';
+    const newUrl = `${protocol}://${productionDomain}${req.originalUrl}`;
+    return res.redirect(301, newUrl);
+  }
+  
+  next();
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
