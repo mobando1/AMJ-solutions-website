@@ -26,31 +26,29 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/ana@amjsolutionsgroup.com', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: formData.get('name'),
           email: formData.get('email'),
-          company: formData.get('company') || 'Not provided',
-          role: formData.get('role') || 'Not provided',
-          'Service Interest': formData.get('Service Interest') || 'Not specified',
+          company: formData.get('company') || undefined,
+          role: formData.get('role') || undefined,
+          serviceInterest: serviceInterest || undefined,
           message: formData.get('message'),
-          _subject: 'New Contact Form Submission - AMJ Solutions Group',
-          _captcha: 'false',
-          _template: 'table'
         })
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setIsSuccess(true);
         form.reset();
         setServiceInterest('');
       } else {
-        setError('There was an error sending your message. Please try again.');
+        setError(data.message || 'There was an error sending your message. Please try again.');
       }
     } catch (err) {
       setError('There was an error sending your message. Please try again.');
@@ -155,7 +153,6 @@ export default function ContactForm() {
           Service of Interest
         </label>
         <Select 
-          name="Service Interest" 
           value={serviceInterest} 
           onValueChange={setServiceInterest}
           disabled={isSubmitting}
@@ -173,7 +170,6 @@ export default function ContactForm() {
             <SelectItem value="General Inquiry">General Inquiry</SelectItem>
           </SelectContent>
         </Select>
-        <input type="hidden" name="Service Interest" value={serviceInterest} />
       </div>
 
       <div className="space-y-2">

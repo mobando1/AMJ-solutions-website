@@ -89,6 +89,8 @@ Preferred communication style: Simple, everyday language.
 
 ### External Dependencies
 
+**Contact Form Email Delivery**: Resend integration for transactional email delivery. Contact form submissions are sent via backend API endpoint (`/api/contact`) to ana@amjsolutionsgroup.com. API key stored in environment variable `RESEND_API_KEY`. This replaced the previous FormSubmit integration which required manual activation for each new submission.
+
 **Calendly Integration**: Modal-based appointment scheduling via environment variable `VITE_CALENDLY_URL`. Component wraps Calendly embed in a dialog for seamless booking experience.
 
 **Image Assets**: Local image storage in `attached_assets/` directory containing:
