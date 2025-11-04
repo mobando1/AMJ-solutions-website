@@ -71,10 +71,10 @@ export default function Privacy() {
               <p className="text-muted-foreground leading-relaxed">
                 If you have questions about this Privacy Policy, please contact us at{' '}
                 <a
-                  href="mailto:contact@amjsolutionsgroup.com"
+                  href="mailto:ana@amjsolutionsgroup.com"
                   className="text-primary hover:underline"
                 >
-                  contact@amjsolutionsgroup.com
+                  ana@amjsolutionsgroup.com
                 </a>
               </p>
             </div>

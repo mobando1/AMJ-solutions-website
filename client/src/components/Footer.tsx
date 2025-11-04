@@ -81,7 +81,7 @@ export default function Footer() {
             </ul>
             <div className="mt-6">
               <a
-                href="https://linkedin.com/company/amj-solutions-group"
+                href="https://linkedin.com/in/ana-joanicot-nelson-42a63718"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"

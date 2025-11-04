@@ -43,9 +43,11 @@ export default function Header() {
                 </span>
               </Link>
             ))}
-            <Button size="sm" data-testid="button-consultation">
-              Book Consultation
-            </Button>
+            <Link href="/contact">
+              <Button size="sm" data-testid="button-consultation">
+                Book Consultation
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -81,9 +83,11 @@ export default function Header() {
               </Link>
             ))}
             <div className="px-4 pt-2">
-              <Button className="w-full" size="sm" data-testid="button-mobile-consultation">
-                Book Consultation
-              </Button>
+              <Link href="/contact">
+                <Button className="w-full" size="sm" data-testid="button-mobile-consultation">
+                  Book Consultation
+                </Button>
+              </Link>
             </div>
           </div>
         )}
