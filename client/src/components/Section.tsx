@@ -7,8 +7,8 @@ interface SectionProps {
 
 export default function Section({ children, className = '', containerClassName = '', id }: SectionProps) {
   return (
-    <section id={id} className={`py-12 sm:py-16 lg:py-20 ${className}`}>
-      <div className={`mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ${containerClassName}`}>
+    <section id={id} className={`py-16 sm:py-20 lg:py-28 ${className}`}>
+      <div className={`mx-auto max-w-screen-xl px-6 sm:px-8 lg:px-12 ${containerClassName}`}>
         {children}
       </div>
     </section>
