@@ -123,75 +123,100 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* SECCIÓN: NUESTROS SERVICIOS - Con bullets mejorados */}
+      {/* SECCIÓN: STABILITY FOCUSED ADVISORY SUPPORT */}
       <Section className="bg-card">
         <div className="text-center mb-16">
           <Badge className="mb-6" variant="secondary">
             Our Solutions
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-            Strategic Communications That Protect and Elevate
+            Stability Focused Advisory Support
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We provide comprehensive solutions for your most critical moments
+            We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <ServiceCard
-            icon={Shield}
-            title="Crisis Communications"
-            description="Immediate response when reputation is on the line"
-            outcomes={[
-              'Real-time crisis response protocols',
-              'Media management and messaging',
-              'Stakeholder communication strategies',
-              '24/7 executive advisory support'
-            ]}
-            learnMoreUrl="/services"
-          />
-          
-          <ServiceCard
-            icon={Star}
-            title="Reputation Management"
-            description="Proactive strategies to build and protect your brand"
-            outcomes={[
-              'Brand positioning and narrative',
-              'Thought leadership development',
-              'Risk assessment and monitoring',
-              'Strategic communications planning'
-            ]}
-            learnMoreUrl="/services"
-          />
-          
-          <ServiceCard
-            icon={Mic}
-            title="Media Training"
-            description="Prepare executives to engage with confidence"
-            outcomes={[
-              'Interview preparation and coaching',
-              'Message development',
-              'Body language and delivery skills',
-              'Crisis media simulation exercises'
-            ]}
-            learnMoreUrl="/services"
-          />
-          
-          <ServiceCard
-            icon={TrendingUp}
-            title="Executive Coaching"
-            description="Sharpen leadership presence and strategic thinking"
-            outcomes={[
-              'Leadership communication skills',
-              'Strategic decision-making',
-              'Stakeholder engagement tactics',
-              'Executive presence development'
-            ]}
-            learnMoreUrl="/services"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <Card className="hover-elevate transition-all h-full">
+            <CardContent className="pt-8 pb-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Executive Crisis & Risk Advisory</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Structure, judgment, and control when risk escalates.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-elevate transition-all h-full">
+            <CardContent className="pt-8 pb-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Strategic Communications & Leadership Alignment</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Consistent messaging that strengthens trust and clarity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-elevate transition-all h-full">
+            <CardContent className="pt-8 pb-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <TrendingUp className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Change Leadership & Organizational Stability</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Guiding transitions with confidence and continuity.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-elevate transition-all h-full">
+            <CardContent className="pt-8 pb-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Target className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Program & Execution Stabilization</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Restoring momentum to stalled or strained initiatives.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
-        <div className="text-center text-lg">
+        {/* ROADMAP 1-90 DAYS */}
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-4">
+            How Engagements Work
+          </h3>
+          <p className="text-lg text-muted-foreground text-center mb-10">
+            Early engagement brings control and clarity
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 text-center">
+              <div className="text-sm font-medium text-primary uppercase tracking-wide mb-2">Days 1–30</div>
+              <h4 className="text-lg font-semibold text-foreground">Stabilize & Clarify</h4>
+            </div>
+            <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 text-center">
+              <div className="text-sm font-medium text-primary uppercase tracking-wide mb-2">Days 31–60</div>
+              <h4 className="text-lg font-semibold text-foreground">Align Leadership Direction</h4>
+            </div>
+            <div className="bg-primary/15 border border-primary/40 rounded-lg p-6 text-center">
+              <div className="text-sm font-medium text-primary uppercase tracking-wide mb-2">Days 61–90</div>
+              <h4 className="text-lg font-semibold text-foreground">Strengthen Execution & Prepare Forward</h4>
+            </div>
+          </div>
+
+          <p className="text-lg text-center text-foreground font-semibold">
+            Outcome: Control, confidence, and forward momentum.
+          </p>
+        </div>
+
+        <div className="text-center text-lg mt-12">
           <Link href="/services" data-testid="link-view-all-services">
             <Button size="lg" data-testid="button-view-all-services">
               View All Services
