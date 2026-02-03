@@ -405,7 +405,7 @@ export default function Home() {
             Ready to Protect Your Reputation?
           </h2>
           <p className="text-xl mb-10 opacity-95 leading-relaxed">
-            Get expert strategic communications counsel when it matters most. Whether you're planning ahead or responding in real time, we're here to help you lead with confidence.
+            Some moments in leadership feel unstable, ambiguous, or simply overwhelming. That's when we step in, to steady teams, restore alignment, and help organizations move forward with certainty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-lg">
             <Link href="/contact" data-testid="link-final-contact">
