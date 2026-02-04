@@ -1,101 +1,79 @@
 import Section from '@/components/Section';
 import { Button } from '@/components/ui/button';
-import { Shield, Star, Mic, User, Users, MessageSquare } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Shield, MessageCircle, RefreshCw, Target, CheckCircle2 } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Services() {
   const services = [
     {
-      id: 'crisis-communications',
+      id: 'crisis-risk-advisory',
       icon: Shield,
-      title: 'Crisis Communications',
+      title: 'Executive Crisis & Risk Advisory',
+      tagline: 'Structure, judgment, and control when risk escalates.',
       description:
-        'Immediate, strategic response when your reputation is on the line. We help organizations navigate data breaches, leadership transitions, regulatory investigations, and public controversies with clarity and confidence.',
+        'When stakes are high and decisions carry consequence, we provide the structure, judgment, and steady hand leaders need. Our crisis and risk advisory support helps executives navigate uncertainty with clarity and control.',
       outcomes: [
-        'Rapid response protocols activated within hours',
-        'Clear, consistent messaging across all channels',
-        'Stakeholder confidence maintained through transparency',
-        'Brand reputation protected and strengthened',
+        'Rapid situation assessment and stabilization',
+        'Clear decision frameworks under pressure',
+        'Stakeholder confidence maintained through disciplined communication',
+        'Risk mitigation strategies that protect reputation and operations',
       ],
     },
     {
-      id: 'reputation-management',
-      icon: Star,
-      title: 'Reputation Management',
+      id: 'strategic-communications',
+      icon: MessageCircle,
+      title: 'Strategic Communications & Leadership Alignment',
+      tagline: 'Consistent messaging that strengthens trust and clarity.',
       description:
-        'Proactive strategies to build, protect, and restore your organization\'s reputation. From executive positioning to corporate narrative development, we ensure your story is told authentically.',
+        'Fragmented communication erodes trust. We help leadership teams align on message, establish consistent communication protocols, and strengthen stakeholder relationships through clarity and precision.',
       outcomes: [
-        'Enhanced brand credibility and trust',
-        'Positive media coverage and thought leadership',
-        'Strategic narrative that resonates with key audiences',
-        'Long-term reputation resilience',
+        'Unified messaging across leadership and teams',
+        'Strengthened trust with key stakeholders',
+        'Clear communication protocols for critical moments',
+        'Enhanced executive presence and credibility',
       ],
     },
     {
-      id: 'media-training',
-      icon: Mic,
-      title: 'Media Training',
+      id: 'change-leadership',
+      icon: RefreshCw,
+      title: 'Change Leadership & Organizational Stability',
+      tagline: 'Guiding transitions with confidence and continuity.',
       description:
-        'Prepare executives and spokespeople to confidently engage with media, investors, and stakeholders. Our hands-on training covers message development, interview techniques, and crisis scenarios.',
+        'Change creates instability when poorly managed. We guide organizations through transitions—leadership changes, restructuring, cultural shifts—ensuring continuity, alignment, and forward momentum.',
       outcomes: [
-        'Executives who communicate with clarity and confidence',
-        'Consistent on-brand messaging across all interviews',
-        'Crisis-ready spokespeople who stay calm under pressure',
-        'Reduced risk of off-message communication',
+        'Smooth leadership and organizational transitions',
+        'Reduced uncertainty and resistance to change',
+        'Maintained productivity during periods of change',
+        'Stronger organizational alignment and culture',
       ],
     },
     {
-      id: 'executive-coaching',
-      icon: User,
-      title: 'Executive Coaching',
+      id: 'program-stabilization',
+      icon: Target,
+      title: 'Program & Execution Stabilization',
+      tagline: 'Restoring momentum to stalled or strained initiatives.',
       description:
-        'One-on-one coaching to help leaders sharpen their communication skills, executive presence, and strategic thinking. Tailored to each executive\'s unique challenges and goals.',
+        'Critical initiatives stall when execution falters. We step in to restore momentum, clarify direction, and ensure programs deliver results—getting stalled initiatives back on track.',
       outcomes: [
-        'Enhanced leadership presence and influence',
-        'Improved stakeholder engagement',
-        'Greater confidence in high-pressure situations',
-        'Authentic, compelling communication style',
-      ],
-    },
-    {
-      id: 'public-affairs',
-      icon: Users,
-      title: 'Public Affairs & Stakeholder Engagement',
-      description:
-        'Navigate complex regulatory environments and build coalitions of support. We help organizations engage effectively with government, community leaders, and key stakeholders.',
-      outcomes: [
-        'Strong relationships with regulatory and community stakeholders',
-        'Successful navigation of policy and legislative challenges',
-        'Community support for business initiatives',
-        'Proactive issue management',
-      ],
-    },
-    {
-      id: 'internal-communications',
-      icon: MessageSquare,
-      title: 'Internal Communications',
-      description:
-        'Align your workforce during change, crisis, or transformation. Clear internal communication builds trust, maintains morale, and ensures everyone moves in the same direction.',
-      outcomes: [
-        'Employees informed and engaged during change',
-        'Reduced rumors and uncertainty',
-        'Stronger organizational culture',
-        'Improved productivity and retention',
+        'Stalled programs restarted with clear direction',
+        'Improved execution and accountability',
+        'Stakeholder confidence restored',
+        'Measurable progress toward strategic goals',
       ],
     },
   ];
 
   return (
     <div>
-      <section className="bg-card py-6 sm:py-8">
+      <section className="bg-card py-8 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
-              Strategic Communications Services
+              Stability Focused Advisory Support
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-              Comprehensive solutions for your most critical communications challenges. Every
-              engagement is conducted with the utmost discretion and confidentiality.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
             </p>
             <p className="text-sm text-muted-foreground italic">
               All client work is protected by strict confidentiality agreements
@@ -116,7 +94,8 @@ export default function Services() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
                   <Icon className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-3xl font-semibold text-foreground mb-4">{service.title}</h2>
+                <h2 className="text-3xl font-semibold text-foreground mb-2">{service.title}</h2>
+                <p className="text-lg text-primary font-medium mb-4">{service.tagline}</p>
                 <p className="text-base text-muted-foreground leading-relaxed mb-6">
                   {service.description}
                 </p>
@@ -125,17 +104,17 @@ export default function Services() {
                     variant="outline"
                     data-testid={`button-consult-${service.id}`}
                   >
-                    Contact Us
+                    Discuss This Service
                   </Button>
                 </Link>
               </div>
               <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                <div className="bg-card border border-card-border rounded-lg p-8">
+                <div className="bg-card border border-border rounded-lg p-8">
                   <h3 className="text-lg font-semibold text-foreground mb-4">Key Outcomes</h3>
                   <ul className="space-y-3">
                     {service.outcomes.map((outcome, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground leading-relaxed">
                           {outcome}
                         </span>
@@ -148,6 +127,72 @@ export default function Services() {
           </Section>
         );
       })}
+
+      <Section className="bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+              How Engagements Work
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Early engagement brings control and clarity
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="relative hover-elevate transition-all duration-200">
+                <CardContent className="pt-8 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                    <span className="text-xl font-bold">1-30</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h3>
+                  <p className="text-lg font-medium text-primary mb-2">Stabilize & Clarify</p>
+                  <p className="text-sm text-muted-foreground">
+                    Rapidly understand the situation, risks, and decision constraints. Begin early stabilization.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="relative hover-elevate transition-all duration-200">
+                <CardContent className="pt-8 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                    <span className="text-xl font-bold">31-60</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h3>
+                  <p className="text-lg font-medium text-primary mb-2">Align Direction</p>
+                  <p className="text-sm text-muted-foreground">
+                    Establish clear decision pathways and leadership alignment. Reduce friction and regain control.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="relative hover-elevate transition-all duration-200">
+                <CardContent className="pt-8 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                    <span className="text-xl font-bold">61-90</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h3>
+                  <p className="text-lg font-medium text-primary mb-2">Strengthen & Prepare</p>
+                  <p className="text-sm text-muted-foreground">
+                    Reinforce execution, capture lessons learned, and prepare leadership for what comes next.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <div className="inline-block bg-card border border-border rounded-lg px-8 py-4">
+              <p className="text-xl font-semibold text-foreground">
+                Outcome: Control, confidence, and forward momentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       <Section className="bg-primary text-primary-foreground text-center">
         <div className="max-w-3xl mx-auto">
@@ -164,7 +209,7 @@ export default function Services() {
               size="lg"
               data-testid="button-contact-cta"
             >
-              Get In Touch
+              Schedule a Strategy Call
             </Button>
           </Link>
         </div>
