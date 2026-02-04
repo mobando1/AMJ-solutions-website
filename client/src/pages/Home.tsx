@@ -70,22 +70,22 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-              Helping Leaders Get Ahead of Risk—Or Lead Through It
+              Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              AMJ Solutions Group helps you lead with purpose, whether you're getting ahead of risk or navigating it in real time. We are the trusted advisors leaders call before the storm hits and when the pressure is on.
+              We partner with senior leaders when decisions slow, communication fragments, or critical initiatives stall under pressure. Your organization moves forward with clarity, control, and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button size="lg" data-testid="hero-cta">
-                  Contact Us Now
+                  Talk With an Advisor
                 </Button>
               </Link>
-              <Link href="/services">
+              <a href="#how-we-work">
                 <Button variant="outline" size="lg" data-testid="button-services">
-                  View Our Services
+                  See How We Work
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </Section>
@@ -96,7 +96,7 @@ export default function Home() {
       <Section className="bg-card">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-2xl sm:text-3xl font-semibold text-foreground mb-8">
-            Complexity. Change. Crisis. That's our zone.
+            Risk. Change. Uncertainty. That's where we work.
           </p>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
             Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="relative bg-primary">
+      <Section id="how-we-work" className="relative bg-primary">
         <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-card to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent pointer-events-none" />
         <div className="mb-12 text-center text-primary-foreground relative">
