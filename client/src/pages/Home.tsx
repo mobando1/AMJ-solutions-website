@@ -70,6 +70,51 @@ export default function Home() {
       {/* LOGOS DE CLIENTES - Para credibilidad inmediata */}
       <LogoMarquee />
 
+      {/* SECCIÓN: KEY MOMENTS TO REACH OUT */}
+      <Section className="bg-background">
+        <div className="text-center mb-16">
+          <Badge className="mb-6" variant="secondary">
+            Strategic Support
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            Key moments to reach out
+          </h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Some moments in leadership feel unstable, ambiguous, or simply overwhelming. That’s when we step in, to steady teams, restore alignment, and help organizations move forward with certainty.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Crisis & Risk Escalation</h3>
+              <p className="text-muted-foreground">Immediate support when reputation or operations are under threat.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Organizational Transition</h3>
+              <p className="text-muted-foreground">Navigating leadership changes, mergers, or structural shifts.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Strategic Misalignment</h3>
+              <p className="text-muted-foreground">Restoring clarity when internal or external messaging loses focus.</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* SECCIÓN: EL PROBLEMA QUE RESOLVEMOS */}
       <Section className="bg-background">
         <div className="max-w-5xl mx-auto text-center mb-16">
