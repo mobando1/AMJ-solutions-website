@@ -5,7 +5,8 @@ import LogoWall from '@/components/LogoWall';
 import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw } from 'lucide-react';
+import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw, Clock, Zap, CheckCircle, Calendar } from 'lucide-react';
+import anaPhoto from '@assets/Ana Nelson FluxLoRA Image_1761180719803.jpg';
 import { Link } from 'wouter';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
 import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
@@ -120,67 +121,27 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 text-foreground">
+        <div className="max-w-4xl mx-auto">
           <div className="bg-card border border-border rounded-lg p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                <Sunrise className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold text-foreground">Before the Storm</h3>
-            </div>
-            <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-foreground mb-6">Leaders typically reach out when:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { icon: UserCheck, title: 'Leadership Transitions', description: 'Onboarding support, messaging alignment, executive coaching' },
-                { icon: Target, title: 'Strategic Planning and Growth', description: 'Communications audit and strategy, stakeholder mapping' },
-                { icon: BookOpen, title: 'Program or Initiative Launches', description: 'Project setup, risk audits, success frameworks' },
-                { icon: Shield, title: 'Policy, Compliance or Regulatory Shifts', description: 'Communication protocols, change management' },
-                { icon: AlertTriangle, title: 'Crisis Prevention and Scenario Planning', description: 'Playbooks, tabletop exercises, executive training' },
+                { icon: Clock, text: 'Decisions slow or stall due to risk or uncertainty' },
+                { icon: MessageCircle, text: 'Communication becomes scattered or inconsistent' },
+                { icon: RefreshCw, text: 'Change creates instability instead of progress' },
+                { icon: AlertTriangle, text: 'A crisis is emerging or already underway' },
+                { icon: Target, text: 'A critical initiative stalls under pressure' },
+                { icon: Users, text: 'Leaders are carrying too much without structure' },
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="flex gap-4">
+                  <div key={idx} className="flex gap-4 items-start">
                     <div className="flex-shrink-0">
                       <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="bg-card border border-border rounded-lg p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                <CloudRain className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold text-foreground">To Guide You Through It</h3>
-            </div>
-            <div className="space-y-4">
-              {[
-                { icon: Shield, title: 'Crisis Response', description: 'Real-time communications, media management, incident strategy' },
-                { icon: MessageCircle, title: 'Communication Breakdowns', description: 'Stakeholder re-engagement, message restructuring' },
-                { icon: LifeBuoy, title: 'Off-track Programs', description: 'Program rescue and reset, delivery oversight' },
-                { icon: AlertTriangle, title: 'Reputational Risk Exposure', description: 'Risk mitigation plans' },
-                { icon: RefreshCw, title: 'Organizational Change or Uncertainty', description: 'Executive advisory, strategic repositioning' },
-              ].map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div key={idx} className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
+                    <p className="text-foreground leading-relaxed pt-2">{item.text}</p>
                   </div>
                 );
               })}
@@ -203,7 +164,7 @@ export default function Home() {
             <ServiceCard
               key={index}
               {...service}
-              learnMoreUrl="/services"
+              hideButton
             />
           ))}
         </div>
@@ -227,9 +188,9 @@ export default function Home() {
 
       <Section className="bg-background">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">Why AMJ</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">Experience You Can Rely On</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {whyAmj.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -243,9 +204,66 @@ export default function Home() {
             );
           })}
         </div>
+        
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-4xl mx-auto">
+          <div className="flex-1 order-2 md:order-1">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm a Cuban American, two time military mom, raised by service, accountability, and resilience. Calm under pressure and a strong work ethic are lived values that define who I am.
+            </p>
+          </div>
+          <div className="flex-shrink-0 order-1 md:order-2">
+            <img 
+              src={anaPhoto} 
+              alt="Ana Nelson" 
+              className="w-48 h-48 object-cover rounded-full border-4 border-primary/20 shadow-lg"
+            />
+          </div>
+        </div>
       </Section>
 
       <Section className="bg-card">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+              Executive Stability Advisory Engagement
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Guiding leaders through risk, change, and uncertainty with clarity and confidence.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              { icon: Calendar, text: 'A focused 90 day advisory engagement' },
+              { icon: Users, text: 'Fractional executive level support' },
+              { icon: Target, text: 'Embedded where decisions are made' },
+              { icon: Zap, text: 'Direct access to leadership decision makers' },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="flex-shrink-0">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                  <p className="text-foreground leading-relaxed pt-3">{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+          
+          <div className="text-center">
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-strategy-call">
+                Schedule a Strategy Call
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="bg-background">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
             Real Results. Real Impact.

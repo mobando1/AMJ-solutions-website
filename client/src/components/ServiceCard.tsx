@@ -9,6 +9,7 @@ interface ServiceCardProps {
   icon?: LucideIcon;
   onConsultationClick?: () => void;
   learnMoreUrl?: string;
+  hideButton?: boolean;
 }
 
 export default function ServiceCard({
@@ -18,6 +19,7 @@ export default function ServiceCard({
   icon: Icon,
   onConsultationClick,
   learnMoreUrl,
+  hideButton = false,
 }: ServiceCardProps) {
   const hasOutcomes = outcomes.length > 0;
   const showLearnMore = !!learnMoreUrl;
@@ -45,31 +47,33 @@ export default function ServiceCard({
           </ul>
         )}
       </CardContent>
-      <CardFooter>
-        {showLearnMore ? (
-          <a href={learnMoreUrl} className="w-full">
+      {!hideButton && (
+        <CardFooter>
+          {showLearnMore ? (
+            <a href={learnMoreUrl} className="w-full">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full group"
+                data-testid={`button-learn-more-${title.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                Learn More
+                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          ) : (
             <Button
               variant="outline"
               size="sm"
-              className="w-full group"
-              data-testid={`button-learn-more-${title.toLowerCase().replace(/\s+/g, '-')}`}
+              className="w-full"
+              onClick={onConsultationClick}
+              data-testid={`button-consult-${title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              Learn More
-              <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              Schedule Consultation
             </Button>
-          </a>
-        ) : (
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full"
-            onClick={onConsultationClick}
-            data-testid={`button-consult-${title.toLowerCase().replace(/\s+/g, '-')}`}
-          >
-            Schedule Consultation
-          </Button>
-        )}
-      </CardFooter>
+          )}
+        </CardFooter>
+      )}
     </Card>
   );
 }
