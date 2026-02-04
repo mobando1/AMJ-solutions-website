@@ -8,28 +8,28 @@ export default function About() {
   const methodology = [
     {
       step: '1',
-      title: 'Discovery',
-      description: 'Deep dive into your situation, stakeholders, and objectives',
+      title: 'Assess & Stabilize',
+      description: 'Rapidly understand the situation, risks, leadership dynamics, and decision constraints. Immediate priorities are clarified and early stabilization begins.',
     },
     {
       step: '2',
-      title: 'Strategy',
-      description: 'Craft a comprehensive communications plan tailored to your needs',
+      title: 'Align Leadership Direction',
+      description: 'Establish clear decision pathways, leadership alignment, and consistent communication to reduce friction and regain control.',
     },
     {
       step: '3',
-      title: 'Execution',
-      description: 'Implement messaging, stakeholder engagement, and crisis protocols',
+      title: 'Guide Execution',
+      description: 'Support leaders as direction is translated into action—ensuring communication, risk management, and execution move together.',
     },
     {
       step: '4',
-      title: 'Training',
-      description: 'Prepare executives through media training and scenario planning',
+      title: 'Prepare Leadership',
+      description: 'Strengthen executive readiness through scenario planning, leadership coaching, and decision-making support under pressure.',
     },
     {
       step: '5',
-      title: 'Evaluation',
-      description: 'Measure impact and refine approach for continuous improvement',
+      title: 'Reinforce & Prepare Forward',
+      description: 'Confirm stability, capture lessons learned, and leave leaders better prepared for what comes next.',
     },
   ];
 
@@ -96,26 +96,35 @@ export default function About() {
       </Section>
 
       <Section className="bg-card py-6 sm:py-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-            Our Methodology
+            How We Work
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A proven five-step approach to strategic communications
-          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {methodology.map((item, index) => (
-            <Card key={index} className="hover-elevate transition-all duration-200">
-              <CardContent className="pt-6 text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mb-4">
-                  {item.step}
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20" />
+            
+            <div className="space-y-8">
+              {methodology.map((item, index) => (
+                <div key={index} className="relative flex gap-6">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center shadow-lg">
+                      {item.step}
+                    </div>
+                  </div>
+                  
+                  <Card className="flex-1 hover-elevate transition-all duration-200">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
