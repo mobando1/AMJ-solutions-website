@@ -60,36 +60,34 @@ export default function About() {
           </div>
           <div className="space-y-4">
             <h2 className="text-3xl font-semibold text-foreground">
-              Trusted Counsel for High-Stakes Communications
+              Trusted Executive Counsel
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Ana Nelson brings more than 25 years of combined leadership experience in corporate communications, crisis
-              management, and media relations. She has advised C-suite executives at Fortune 500
-              companies through high-stakes situations including corporate crises, reputation
-              threats, regulatory challenges, and transformative business moments.
+              Ana Nelson brings more than 25 years of senior-level advisory and leadership experience supporting executives through risk, change, and uncertainty. She is trusted by C-suite leaders when decisions carry consequence, communication must be precise, and execution cannot falter.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Her expertise spans financial services, healthcare, energy, technology, and higher
-              education sectors. Ana's approach combines strategic counsel with practical execution,
-              ensuring clients navigate complex situations with confidence and clarity.
+              Her work spans financial services, energy, technology, healthcare, higher education, and government-adjacent environments. Ana's approach is grounded in clarity, discretion, and disciplined execution—helping leaders stabilize situations, align direction, and move forward with confidence.
             </p>
-            <div className="space-y-3 pt-4">
+            <p className="text-base font-medium text-foreground pt-2">
+              She has been relied upon to:
+            </p>
+            <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  Advised executives at leading Fortune 500 companies
+                  [Punto 1 - por agregar]
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  Managed crisis situations with potential multi-million dollar impact
+                  [Punto 2 - por agregar]
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  Trained hundreds of executives in media relations and crisis communication
+                  [Punto 3 - por agregar]
                 </p>
               </div>
             </div>
