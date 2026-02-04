@@ -70,10 +70,10 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-              Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
+              Risk. Change. Uncertainty. That's where we work.
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              We partner with senior leaders when decisions slow, communication fragments, or critical initiatives stall under pressure. Your organization moves forward with clarity, control, and confidence.
+              Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
