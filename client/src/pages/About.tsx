@@ -68,26 +68,23 @@ export default function About() {
             <p className="text-base text-muted-foreground leading-relaxed">
               Her work spans financial services, energy, technology, healthcare, higher education, and government-adjacent environments. Ana's approach is grounded in clarity, discretion, and disciplined execution—helping leaders stabilize situations, align direction, and move forward with confidence.
             </p>
-            <p className="text-base font-medium text-foreground pt-2">
-              She has been relied upon to:
-            </p>
-            <div className="space-y-3">
+            <div className="space-y-3 pt-4">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  [Punto 1 - por agregar]
+                  Advised executives at leading Fortune 500 companies
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  [Punto 2 - por agregar]
+                  Managed crisis situations with potential multi-million dollar impact
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  [Punto 3 - por agregar]
+                  Trained hundreds of executives in media relations and crisis communication
                 </p>
               </div>
             </div>
