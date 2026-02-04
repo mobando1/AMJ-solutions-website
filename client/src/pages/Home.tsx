@@ -16,24 +16,24 @@ import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrai
 export default function Home() {
   const services = [
     {
-      title: 'Crisis Communications',
-      description: 'Immediate response when reputation is on the line',
+      title: 'Executive Crisis & Risk Advisory',
+      description: 'Structure, judgment, and control when risk escalates.',
       icon: Shield,
     },
     {
-      title: 'Reputation Management',
-      description: 'Proactive strategies to build and protect your brand',
-      icon: Star,
+      title: 'Strategic Communications & Leadership Alignment',
+      description: 'Consistent messaging that strengthens trust and clarity.',
+      icon: MessageCircle,
     },
     {
-      title: 'Media Training',
-      description: 'Prepare executives to engage with confidence',
-      icon: Mic,
+      title: 'Change Leadership & Organizational Stability',
+      description: 'Guiding transitions with confidence and continuity.',
+      icon: RefreshCw,
     },
     {
-      title: 'Executive Coaching',
-      description: 'Sharpen leadership presence and strategic thinking',
-      icon: TrendingUp,
+      title: 'Program & Execution Stabilization',
+      description: 'Restoring momentum to stalled or strained initiatives.',
+      icon: Target,
     },
   ];
 
@@ -153,13 +153,13 @@ export default function Home() {
       <Section className="bg-card">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-            Our Services
+            Stability Focused Advisory Support
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive communications solutions for your most critical moments
+            We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -168,6 +168,42 @@ export default function Home() {
             />
           ))}
         </div>
+        
+        <div className="max-w-4xl mx-auto mb-12">
+          <h3 className="text-xl font-semibold text-foreground text-center mb-8">
+            Early engagement brings control and clarity:
+          </h3>
+          <div className="relative">
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="relative bg-card border border-border rounded-lg p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                  1-30
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Days 1 to 30</h4>
+                <p className="text-sm text-muted-foreground">Stabilize and clarify</p>
+              </div>
+              <div className="relative bg-card border border-border rounded-lg p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                  31-60
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Days 31 to 60</h4>
+                <p className="text-sm text-muted-foreground">Align leadership direction</p>
+              </div>
+              <div className="relative bg-card border border-border rounded-lg p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                  61-90
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">Days 61 to 90</h4>
+                <p className="text-sm text-muted-foreground">Strengthen execution and prepare forward</p>
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-lg font-medium text-foreground mt-8">
+            Outcome: Control, confidence, and forward momentum.
+          </p>
+        </div>
+        
         <div className="text-center">
           <Link href="/services">
             <Button size="lg" variant="default" data-testid="button-view-all-services">
