@@ -24,8 +24,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">AMJ Solutions Group</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Strategic communications for high-stakes moments. Expert crisis management and
-              reputation counsel.
+              Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
             </p>
           </div>
 
