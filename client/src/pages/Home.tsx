@@ -115,7 +115,7 @@ export default function Home() {
             Key Moments to Reach Out
           </h2>
           <p className="text-lg max-w-2xl mx-auto opacity-95">
-            Whether you're planning ahead or responding in real time, we're here to help you lead with confidence
+            Some moments in leadership feel unstable, ambiguous, or simply overwhelming. That's when we step in, to steady teams, restore alignment, and help organizations move forward with certainty.
           </p>
         </div>
 
