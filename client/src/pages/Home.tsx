@@ -96,7 +96,7 @@ export default function Home() {
       <Section className="bg-card">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xl sm:text-2xl font-semibold text-foreground mb-8 leading-relaxed">
-            We partner with senior leaders when decisions slow, communication fragments, or critical initiatives stall under pressure. Your organization moves forward with clarity, control, and confidence.
+            We partner with senior leaders when decisions slow, communication breaks down, or critical initiatives stall under pressure. Your organization moves forward with clarity, control, and confidence.
           </p>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
             Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
