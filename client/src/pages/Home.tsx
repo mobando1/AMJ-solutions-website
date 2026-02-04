@@ -71,7 +71,7 @@ export default function Home() {
       <LogoMarquee />
 
       {/* SECCIÓN: KEY MOMENTS TO REACH OUT */}
-      <Section className="bg-background">
+      <Section className="bg-slate-50 dark:bg-slate-900/50">
         <div className="text-center mb-16">
           <Badge className="mb-6" variant="secondary">
             Strategic Support
@@ -85,33 +85,47 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Crisis & Risk Escalation</h3>
-              <p className="text-muted-foreground">Immediate support when reputation or operations are under threat.</p>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Organizational Transition</h3>
-              <p className="text-muted-foreground">Navigating leadership changes, mergers, or structural shifts.</p>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Strategic Misalignment</h3>
-              <p className="text-muted-foreground">Restoring clarity when internal or external messaging loses focus.</p>
-            </div>
-          </div>
+          <Card className="hover-elevate transition-all border-none bg-background shadow-sm">
+            <CardContent className="pt-8 pb-8">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <AlertTriangle className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Crisis & Risk Escalation</h3>
+                  <p className="text-muted-foreground">Immediate support when reputation or operations are under threat.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover-elevate transition-all border-none bg-background shadow-sm">
+            <CardContent className="pt-8 pb-8">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Organizational Transition</h3>
+                  <p className="text-muted-foreground">Navigating leadership changes, mergers, or structural shifts.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-elevate transition-all border-none bg-background shadow-sm">
+            <CardContent className="pt-8 pb-8">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Target className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Strategic Misalignment</h3>
+                  <p className="text-muted-foreground">Restoring clarity when internal or external messaging loses focus.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </Section>
 
