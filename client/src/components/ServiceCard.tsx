@@ -47,11 +47,7 @@ export default function ServiceCard({
       </CardContent>
       <CardFooter>
         {showLearnMore ? (
-          <a 
-            href={learnMoreUrl} 
-            className="w-full"
-            data-testid={`link-learn-more-${title.toLowerCase().replace(/\s+/g, '-')}`}
-          >
+          <a href={learnMoreUrl} className="w-full">
             <Button
               variant="outline"
               size="sm"

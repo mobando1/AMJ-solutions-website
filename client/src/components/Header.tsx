@@ -17,16 +17,12 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
       <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" data-testid="link-home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img 
-                src={butterflyLogo} 
-                alt="AMJ Solutions Group - Crisis Communications & Reputation Management" 
-                className="h-14 w-14 object-contain" 
-              />
+            <Link href="/" data-testid="link-home" className="flex items-center gap-3">
+              <img src={butterflyLogo} alt="AMJ Butterfly Logo" className="h-12 w-12 object-contain" />
               <span className="text-xl font-semibold text-foreground">AMJ Solutions Group</span>
             </Link>
           </div>
@@ -39,7 +35,7 @@ export default function Header() {
                 data-testid={`link-${item.name.toLowerCase()}`}
               >
                 <span
-                  className={`text-base font-medium transition-colors hover:text-primary ${
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
                     location === item.href ? 'text-primary' : 'text-muted-foreground'
                   }`}
                 >
@@ -47,8 +43,8 @@ export default function Header() {
                 </span>
               </Link>
             ))}
-            <Link href="/contact" data-testid="link-consultation">
-              <Button size="default" data-testid="button-consultation">
+            <Link href="/contact">
+              <Button size="sm" data-testid="button-consultation">
                 Book Consultation
               </Button>
             </Link>
@@ -60,16 +56,14 @@ export default function Header() {
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-mobile-menu"
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border py-6 space-y-3" role="navigation" aria-label="Mobile navigation">
+          <div className="md:hidden border-t border-border py-4 space-y-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -78,7 +72,7 @@ export default function Header() {
                 data-testid={`link-mobile-${item.name.toLowerCase()}`}
               >
                 <div
-                  className={`block px-4 py-3 text-lg font-medium rounded-md hover-elevate ${
+                  className={`block px-4 py-2 text-base font-medium rounded-md hover-elevate ${
                     location === item.href
                       ? 'text-primary bg-primary/5'
                       : 'text-muted-foreground'
@@ -88,9 +82,9 @@ export default function Header() {
                 </div>
               </Link>
             ))}
-            <div className="px-4 pt-3">
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} data-testid="link-mobile-consultation">
-                <Button className="w-full" size="default" data-testid="button-mobile-consultation">
+            <div className="px-4 pt-2">
+              <Link href="/contact">
+                <Button className="w-full" size="sm" data-testid="button-mobile-consultation">
                   Book Consultation
                 </Button>
               </Link>
