@@ -152,7 +152,7 @@ export default function Services() {
       <Section className="bg-primary text-primary-foreground text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-            Let's Discuss Your Communications Needs
+            Let's Discuss Your Needs
           </h2>
           <p className="text-lg mb-8 opacity-90">
             Every organization faces unique challenges. Contact us for a confidential consultation to

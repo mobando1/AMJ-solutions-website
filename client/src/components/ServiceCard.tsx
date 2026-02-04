@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Check, LucideIcon, ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 
 interface ServiceCardProps {
   title: string;
@@ -50,7 +51,7 @@ export default function ServiceCard({
       {!hideButton && (
         <CardFooter>
           {showLearnMore ? (
-            <a href={learnMoreUrl} className="w-full">
+            <Link href={learnMoreUrl} className="w-full">
               <Button
                 variant="outline"
                 size="sm"
@@ -60,7 +61,7 @@ export default function ServiceCard({
                 Learn More
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </a>
+            </Link>
           ) : (
             <Button
               variant="outline"

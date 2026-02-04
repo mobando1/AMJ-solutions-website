@@ -169,11 +169,11 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center">
-          <a href="/services">
+          <Link href="/services">
             <Button size="lg" variant="default" data-testid="button-view-all-services">
               View All Services
             </Button>
-          </a>
+          </Link>
         </div>
       </Section>
 
