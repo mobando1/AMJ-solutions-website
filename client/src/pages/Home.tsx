@@ -1,3 +1,4 @@
+// Home page - AMJ Solutions Group
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import LogoWall from '@/components/LogoWall';
