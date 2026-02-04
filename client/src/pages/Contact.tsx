@@ -1,72 +1,111 @@
 import Section from '@/components/Section';
 import ContactForm from '@/components/ContactForm';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Linkedin, Calendar, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Calendar, MessageSquare, CheckCircle2, Clock, Shield, Users } from 'lucide-react';
 
 export default function Contact() {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || '';
 
   return (
     <div>
-      <Section className="bg-card">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-6">
-            Let's Talk
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Ready to discuss your communications challenges? Schedule a confidential strategy call or send us a message.
-          </p>
-        </div>
-      </Section>
-
-      <Section className="bg-background">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-              <Calendar className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3">
-              Schedule a Strategy Call
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Pick a time that works for you. All consultations are confidential and focused on your specific needs.
+      <section className="bg-card py-4 sm:py-6">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-foreground mb-3">
+              Let's Talk
+            </h1>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Schedule a confidential strategy call or send us a message.
             </p>
           </div>
-          
-          <Card className="overflow-hidden">
-            <CardContent className="p-0">
-              {calendlyUrl ? (
-                <iframe
-                  src={calendlyUrl}
-                  width="100%"
-                  height="700"
-                  frameBorder="0"
-                  title="Schedule a consultation"
-                  className="w-full"
-                  data-testid="calendly-embed"
-                />
-              ) : (
-                <div className="flex items-center justify-center h-[400px] bg-muted/20 p-8 text-center">
-                  <div className="space-y-4">
-                    <Calendar className="h-16 w-16 mx-auto text-muted-foreground" />
-                    <div>
-                      <p className="text-lg font-medium text-foreground mb-2">
-                        Calendar Coming Soon
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Online scheduling will be available shortly.
-                      </p>
-                      <p className="text-sm text-muted-foreground mt-4">
-                        In the meantime, please use the contact form below or email us directly.
-                      </p>
+        </div>
+      </section>
+
+      <section className="bg-background py-6 sm:py-8">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            <div className="lg:col-span-2 order-2 lg:order-1">
+              <div className="sticky top-24">
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
+                  Schedule a Strategy Call
+                </h2>
+                <p className="text-muted-foreground mb-6">
+                  A 30-minute confidential conversation to understand your situation and explore how we can help.
+                </p>
+                
+                <div className="space-y-4 mb-6">
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">What to Expect</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-muted-foreground">Discuss your current challenges and priorities</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-muted-foreground">Get an honest assessment of how we might help</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-muted-foreground">Explore potential engagement approaches</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-muted-foreground">No pressure, no obligation — just a conversation</p>
                     </div>
                   </div>
                 </div>
-              )}
-            </CardContent>
-          </Card>
+                
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4 text-primary" />
+                    <span>30 minutes</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="h-4 w-4 text-primary" />
+                    <span>Confidential</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span>With Ana Nelson</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-3 order-1 lg:order-2">
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  {calendlyUrl ? (
+                    <iframe
+                      src={calendlyUrl}
+                      width="100%"
+                      height="580"
+                      frameBorder="0"
+                      title="Schedule a consultation"
+                      className="w-full"
+                      data-testid="calendly-embed"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-[400px] bg-muted/20 p-8 text-center">
+                      <div className="space-y-4">
+                        <Calendar className="h-16 w-16 mx-auto text-muted-foreground" />
+                        <div>
+                          <p className="text-lg font-medium text-foreground mb-2">
+                            Calendar Coming Soon
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            Online scheduling will be available shortly.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
-      </Section>
+      </section>
 
       <Section className="bg-card">
         <div className="max-w-5xl mx-auto">
