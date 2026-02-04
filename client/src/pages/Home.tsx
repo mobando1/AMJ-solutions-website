@@ -81,7 +81,7 @@ export default function Home() {
                   Talk With an Advisor
                 </Button>
               </Link>
-              <a href="#how-we-work">
+              <a href="#services-section">
                 <Button variant="outline" size="lg" data-testid="button-services">
                   See How We Work
                 </Button>
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="bg-card">
+      <Section id="services-section" className="bg-card">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
             Stability Focused Advisory Support
