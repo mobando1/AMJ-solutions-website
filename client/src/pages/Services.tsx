@@ -1,4 +1,5 @@
 import Section from '@/components/Section';
+import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, MessageCircle, RefreshCw, Target, CheckCircle2 } from 'lucide-react';
@@ -68,17 +69,19 @@ export default function Services() {
     <div>
       <section className="bg-card py-8 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
-              Stability Focused Advisory Support
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
-            </p>
-            <p className="text-sm text-muted-foreground italic">
-              All client work is protected by strict confidentiality agreements
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
+                Stability Focused Advisory Support
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                All client work is protected by strict confidentiality agreements
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -89,130 +92,144 @@ export default function Services() {
             key={service.id}
             className={index % 2 === 0 ? 'bg-background' : 'bg-card'}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-                  <Icon className="h-8 w-8 text-primary" />
+            <FadeIn>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
+                    <Icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h2 className="text-3xl font-semibold text-foreground mb-2">{service.title}</h2>
+                  <p className="text-lg text-primary font-medium mb-4">{service.tagline}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      data-testid={`button-consult-${service.id}`}
+                    >
+                      Discuss This Service
+                    </Button>
+                  </Link>
                 </div>
-                <h2 className="text-3xl font-semibold text-foreground mb-2">{service.title}</h2>
-                <p className="text-lg text-primary font-medium mb-4">{service.tagline}</p>
-                <p className="text-base text-muted-foreground leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    data-testid={`button-consult-${service.id}`}
-                  >
-                    Discuss This Service
-                  </Button>
-                </Link>
-              </div>
-              <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Key Outcomes</h3>
-                  <ul className="space-y-3">
-                    {service.outcomes.map((outcome, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground leading-relaxed">
-                          {outcome}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
+                  <div className="bg-card border border-border rounded-lg p-8">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">Key Outcomes</h3>
+                    <ul className="space-y-3">
+                      {service.outcomes.map((outcome, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground leading-relaxed">
+                            {outcome}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           </Section>
         );
       })}
 
       <Section className="bg-background">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-              How Engagements Work
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Early engagement brings control and clarity
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
+                How Engagements Work
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Early engagement brings control and clarity
+              </p>
+            </div>
+          </FadeIn>
           
           <div className="relative">
             <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="relative hover-elevate transition-all duration-200">
-                <CardContent className="pt-8 text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                    <span className="text-xl font-bold">1-30</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h3>
-                  <p className="text-lg font-medium text-primary mb-2">Stabilize & Clarify</p>
-                  <p className="text-sm text-muted-foreground">
-                    Rapidly understand the situation, risks, and decision constraints. Begin early stabilization.
-                  </p>
-                </CardContent>
-              </Card>
+              <FadeIn delay={0}>
+                <Card className="relative hover-elevate transition-all duration-200">
+                  <CardContent className="pt-8 text-center">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                      <span className="text-xl font-bold">1-30</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h3>
+                    <p className="text-lg font-medium text-primary mb-2">Stabilize & Clarify</p>
+                    <p className="text-sm text-muted-foreground">
+                      Rapidly understand the situation, risks, and decision constraints. Begin early stabilization.
+                    </p>
+                  </CardContent>
+                </Card>
+              </FadeIn>
               
-              <Card className="relative hover-elevate transition-all duration-200">
-                <CardContent className="pt-8 text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                    <span className="text-xl font-bold">31-60</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h3>
-                  <p className="text-lg font-medium text-primary mb-2">Align Direction</p>
-                  <p className="text-sm text-muted-foreground">
-                    Establish clear decision pathways and leadership alignment. Reduce friction and regain control.
-                  </p>
-                </CardContent>
-              </Card>
+              <FadeIn delay={150}>
+                <Card className="relative hover-elevate transition-all duration-200">
+                  <CardContent className="pt-8 text-center">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                      <span className="text-xl font-bold">31-60</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h3>
+                    <p className="text-lg font-medium text-primary mb-2">Align Direction</p>
+                    <p className="text-sm text-muted-foreground">
+                      Establish clear decision pathways and leadership alignment. Reduce friction and regain control.
+                    </p>
+                  </CardContent>
+                </Card>
+              </FadeIn>
               
-              <Card className="relative hover-elevate transition-all duration-200">
-                <CardContent className="pt-8 text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                    <span className="text-xl font-bold">61-90</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h3>
-                  <p className="text-lg font-medium text-primary mb-2">Strengthen & Prepare</p>
-                  <p className="text-sm text-muted-foreground">
-                    Reinforce execution, capture lessons learned, and prepare leadership for what comes next.
-                  </p>
-                </CardContent>
-              </Card>
+              <FadeIn delay={300}>
+                <Card className="relative hover-elevate transition-all duration-200">
+                  <CardContent className="pt-8 text-center">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                      <span className="text-xl font-bold">61-90</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h3>
+                    <p className="text-lg font-medium text-primary mb-2">Strengthen & Prepare</p>
+                    <p className="text-sm text-muted-foreground">
+                      Reinforce execution, capture lessons learned, and prepare leadership for what comes next.
+                    </p>
+                  </CardContent>
+                </Card>
+              </FadeIn>
             </div>
           </div>
           
-          <div className="text-center mt-12">
-            <div className="inline-block bg-card border border-border rounded-lg px-8 py-4">
-              <p className="text-xl font-semibold text-foreground">
-                Outcome: Control, confidence, and forward momentum.
-              </p>
+          <FadeIn delay={400}>
+            <div className="text-center mt-12">
+              <div className="inline-block bg-card border border-border rounded-lg px-8 py-4">
+                <p className="text-xl font-semibold text-foreground">
+                  Outcome: Control, confidence, and forward momentum.
+                </p>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Section>
 
       <Section className="bg-primary text-primary-foreground text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-            Let's Discuss Your Needs
-          </h2>
-          <p className="text-lg mb-8 opacity-90">
-            Every organization faces unique challenges. Contact us for a confidential consultation to
-            explore how we can help.
-          </p>
-          <Link href="/contact">
-            <Button
-              variant="secondary"
-              size="lg"
-              data-testid="button-contact-cta"
-            >
-              Schedule a Strategy Call
-            </Button>
-          </Link>
-        </div>
+        <FadeIn>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
+              Let's Discuss Your Needs
+            </h2>
+            <p className="text-lg mb-8 opacity-90">
+              Every organization faces unique challenges. Contact us for a confidential consultation to
+              explore how we can help.
+            </p>
+            <Link href="/contact">
+              <Button
+                variant="secondary"
+                size="lg"
+                data-testid="button-contact-cta"
+              >
+                Schedule a Strategy Call
+              </Button>
+            </Link>
+          </div>
+        </FadeIn>
       </Section>
     </div>
   );
