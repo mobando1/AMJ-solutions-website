@@ -39,7 +39,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         </div>
       `;
 
-      await resend.emails.send({
+      const result = await resend.emails.send({
         from: 'AMJ Solutions Group <onboarding@resend.dev>',
         to: 'ana@amjsolutionsgroup.com',
         subject: `New Contact Form Submission from ${validatedData.name}`,
@@ -47,13 +47,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         replyTo: validatedData.email,
       });
 
+      if (result.error) {
+        console.error('Resend API error:', result.error);
+        res.status(500).json({ success: false, message: 'Failed to send message. Please try again or email us directly at ana@amjsolutionsgroup.com' });
+        return;
+      }
+
       res.json({ success: true, message: 'Message sent successfully' });
     } catch (error) {
       console.error('Error sending contact form:', error);
       if (error instanceof z.ZodError) {
         res.status(400).json({ success: false, message: 'Invalid form data', errors: error.errors });
       } else {
-        res.status(500).json({ success: false, message: 'Failed to send message' });
+        res.status(500).json({ success: false, message: 'Failed to send message. Please try again or email us directly at ana@amjsolutionsgroup.com' });
       }
     }
   });
