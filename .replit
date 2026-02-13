@@ -42,3 +42,6 @@ waitForPort = 5000
 
 [userenv.shared]
 VITE_CALENDLY_URL = "https://calendly.com/ana-amjsolutionsgroup/30min"
+
+[userenv.development]
+RESEND_TO_EMAIL = "mateoobandoangel@gmail.com"

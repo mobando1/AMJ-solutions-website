@@ -161,12 +161,10 @@ export default function ContactForm() {
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="Crisis Communications">Crisis Communications</SelectItem>
-            <SelectItem value="Reputation Management">Reputation Management</SelectItem>
-            <SelectItem value="Media Training">Media Training</SelectItem>
-            <SelectItem value="Executive Coaching">Executive Coaching</SelectItem>
-            <SelectItem value="Public Affairs & Stakeholder Engagement">Public Affairs & Stakeholder Engagement</SelectItem>
-            <SelectItem value="Internal Communications">Internal Communications</SelectItem>
+            <SelectItem value="Executive Crisis & Risk Advisory">Executive Crisis & Risk Advisory</SelectItem>
+            <SelectItem value="Strategic Communications & Leadership Alignment">Strategic Communications & Leadership Alignment</SelectItem>
+            <SelectItem value="Change Leadership & Organizational Stability">Change Leadership & Organizational Stability</SelectItem>
+            <SelectItem value="Program & Execution Stabilization">Program & Execution Stabilization</SelectItem>
             <SelectItem value="General Inquiry">General Inquiry</SelectItem>
           </SelectContent>
         </Select>
