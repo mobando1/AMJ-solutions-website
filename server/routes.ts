@@ -40,7 +40,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       `;
 
       const result = await resend.emails.send({
-        from: 'AMJ Solutions Group <onboarding@resend.dev>',
+        from: 'AMJ Solutions Group <contact@amjsolutionsgroup.com>',
         to: 'ana@amjsolutionsgroup.com',
         subject: `New Contact Form Submission from ${validatedData.name}`,
         html: emailHtml,
