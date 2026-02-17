@@ -20,6 +20,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = contactFormSchema.parse(req.body);
 
+      const hasApiKey = !!process.env.RESEND_API_KEY;
+      console.log('Contact form submission:', { 
+        name: validatedData.name, 
+        hasApiKey,
+        fromEmail: process.env.RESEND_FROM_EMAIL || '(default)',
+        toEmail: process.env.RESEND_TO_EMAIL || '(default)',
+      });
+
+      if (!hasApiKey) {
+        console.error('RESEND_API_KEY is not set');
+        res.status(500).json({ success: false, message: 'Email service is not configured. Please email us directly at ana@amjsolutionsgroup.com' });
+        return;
+      }
+
       const emailHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2c5f6f; border-bottom: 2px solid #2c5f6f; padding-bottom: 10px;">
@@ -51,14 +65,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       if (result.error) {
-        console.error('Resend API error:', result.error);
+        console.error('Resend API error:', JSON.stringify(result.error));
         res.status(500).json({ success: false, message: 'Failed to send message. Please try again or email us directly at ana@amjsolutionsgroup.com' });
         return;
       }
 
+      console.log('Email sent successfully:', result.data);
       res.json({ success: true, message: 'Message sent successfully' });
-    } catch (error) {
-      console.error('Error sending contact form:', error);
+    } catch (error: any) {
+      console.error('Error sending contact form:', error?.message || error);
       if (error instanceof z.ZodError) {
         res.status(400).json({ success: false, message: 'Invalid form data', errors: error.errors });
       } else {
