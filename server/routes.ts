@@ -4,8 +4,6 @@ import { storage } from "./storage";
 import { Resend } from 'resend';
 import { z } from 'zod';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
@@ -16,23 +14,26 @@ const contactFormSchema = z.object({
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  app.get('/api/health', (_req, res) => {
+    res.json({
+      status: 'ok',
+      hasResendKey: !!process.env.RESEND_API_KEY,
+      fromEmail: process.env.RESEND_FROM_EMAIL || '(not set)',
+      toEmail: process.env.RESEND_TO_EMAIL || '(not set)',
+    });
+  });
+
   app.post('/api/contact', async (req, res) => {
     try {
       const validatedData = contactFormSchema.parse(req.body);
 
-      const hasApiKey = !!process.env.RESEND_API_KEY;
-      console.log('Contact form submission:', { 
-        name: validatedData.name, 
-        hasApiKey,
-        fromEmail: process.env.RESEND_FROM_EMAIL || '(default)',
-        toEmail: process.env.RESEND_TO_EMAIL || '(default)',
-      });
-
-      if (!hasApiKey) {
+      if (!process.env.RESEND_API_KEY) {
         console.error('RESEND_API_KEY is not set');
         res.status(500).json({ success: false, message: 'Email service is not configured. Please email us directly at ana@amjsolutionsgroup.com' });
         return;
       }
+
+      const resend = new Resend(process.env.RESEND_API_KEY);
 
       const emailHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -56,6 +57,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const fromEmail = process.env.RESEND_FROM_EMAIL || 'AMJ Solutions Group <onboarding@resend.dev>';
       const toEmail = process.env.RESEND_TO_EMAIL || 'ana@amjsolutionsgroup.com';
 
+      console.log('Sending email from:', fromEmail, 'to:', toEmail);
+
       const result = await resend.emails.send({
         from: fromEmail,
         to: toEmail,
@@ -66,7 +69,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       if (result.error) {
         console.error('Resend API error:', JSON.stringify(result.error));
-        res.status(500).json({ success: false, message: 'Failed to send message. Please try again or email us directly at ana@amjsolutionsgroup.com' });
+        res.status(500).json({ 
+          success: false, 
+          message: `Failed to send message: ${result.error.message || 'Unknown error'}. Please email us directly at ana@amjsolutionsgroup.com` 
+        });
         return;
       }
 
@@ -77,7 +83,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (error instanceof z.ZodError) {
         res.status(400).json({ success: false, message: 'Invalid form data', errors: error.errors });
       } else {
-        res.status(500).json({ success: false, message: 'Failed to send message. Please try again or email us directly at ana@amjsolutionsgroup.com' });
+        res.status(500).json({ 
+          success: false, 
+          message: `Failed to send message: ${error?.message || 'Unknown error'}. Please email us directly at ana@amjsolutionsgroup.com` 
+        });
       }
     }
   });
