@@ -9,15 +9,23 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Send, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
-
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+import { useState, useEffect } from 'react';
 
 export default function ContactForm() {
   const [serviceInterest, setServiceInterest] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [web3formsKey, setWeb3formsKey] = useState('');
+
+  useEffect(() => {
+    fetch('/api/config')
+      .then(res => res.json())
+      .then(data => {
+        if (data.web3formsKey) setWeb3formsKey(data.web3formsKey);
+      })
+      .catch(() => {});
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,75 +41,34 @@ export default function ContactForm() {
     const role = formData.get('role') as string;
     const message = formData.get('message') as string;
 
-    if (WEB3FORMS_KEY) {
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            access_key: WEB3FORMS_KEY,
-            name,
-            email,
-            company: company || 'Not provided',
-            role: role || 'Not provided',
-            service_interest: serviceInterest || 'Not specified',
-            message,
-            subject: `New Inquiry from ${name} — AMJ Solutions Group`,
-            from_name: 'AMJ Solutions Group Website',
-          }),
-        });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          name,
+          email,
+          company: company || 'Not provided',
+          role: role || 'Not provided',
+          service_interest: serviceInterest || 'Not specified',
+          message,
+          subject: `New Inquiry from ${name} — AMJ Solutions Group`,
+          from_name: 'AMJ Solutions Group Website',
+          to: 'ana@amjsolutionsgroup.com',
+        }),
+      });
 
-        const data = await response.json();
-        if (data.success) {
-          setIsSuccess(true);
-          form.reset();
-          setServiceInterest('');
-        } else {
-          setError('There was an error sending your message. Please try again.');
-        }
-      } catch {
-        setError('There was an error sending your message. Please try again.');
-      }
-    } else {
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name,
-            email,
-            company: company || undefined,
-            role: role || undefined,
-            serviceInterest: serviceInterest || undefined,
-            message,
-          }),
-        });
-
-        const data = await response.json();
-        if (response.ok && data.success) {
-          setIsSuccess(true);
-          form.reset();
-          setServiceInterest('');
-        } else {
-          const subject = encodeURIComponent(`Inquiry from ${name} — AMJ Solutions Group`);
-          const body = encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\nRole: ${role || 'N/A'}\nService Interest: ${serviceInterest || 'N/A'}\n\nMessage:\n${message}`
-          );
-          window.location.href = `mailto:ana@amjsolutionsgroup.com?subject=${subject}&body=${body}`;
-          setIsSuccess(true);
-          form.reset();
-          setServiceInterest('');
-        }
-      } catch {
-        const subject = encodeURIComponent(`Inquiry from ${name} — AMJ Solutions Group`);
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\nRole: ${role || 'N/A'}\nService Interest: ${serviceInterest || 'N/A'}\n\nMessage:\n${message}`
-        );
-        window.location.href = `mailto:ana@amjsolutionsgroup.com?subject=${subject}&body=${body}`;
+      const data = await response.json();
+      if (data.success) {
         setIsSuccess(true);
         form.reset();
         setServiceInterest('');
+      } else {
+        setError('There was an error sending your message. Please try again or email us directly at ana@amjsolutionsgroup.com');
       }
+    } catch {
+      setError('There was an error sending your message. Please try again or email us directly at ana@amjsolutionsgroup.com');
     }
 
     setIsSubmitting(false);

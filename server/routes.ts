@@ -23,6 +23,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
+  app.get('/api/config', (_req, res) => {
+    res.json({
+      web3formsKey: process.env.WEB3FORMS_ACCESS_KEY || '',
+    });
+  });
+
   app.post('/api/contact', async (req, res) => {
     try {
       const validatedData = contactFormSchema.parse(req.body);
