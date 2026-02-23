@@ -11,6 +11,8 @@ import {
 import { Send, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+
 export default function ContactForm() {
   const [serviceInterest, setServiceInterest] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,36 +27,84 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          company: formData.get('company') || undefined,
-          role: formData.get('role') || undefined,
-          serviceInterest: serviceInterest || undefined,
-          message: formData.get('message'),
-        })
-      });
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const role = formData.get('role') as string;
+    const message = formData.get('message') as string;
 
-      const data = await response.json();
+    if (WEB3FORMS_KEY) {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            name,
+            email,
+            company: company || 'Not provided',
+            role: role || 'Not provided',
+            service_interest: serviceInterest || 'Not specified',
+            message,
+            subject: `New Inquiry from ${name} — AMJ Solutions Group`,
+            from_name: 'AMJ Solutions Group Website',
+          }),
+        });
 
-      if (response.ok && data.success) {
+        const data = await response.json();
+        if (data.success) {
+          setIsSuccess(true);
+          form.reset();
+          setServiceInterest('');
+        } else {
+          setError('There was an error sending your message. Please try again.');
+        }
+      } catch {
+        setError('There was an error sending your message. Please try again.');
+      }
+    } else {
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            company: company || undefined,
+            role: role || undefined,
+            serviceInterest: serviceInterest || undefined,
+            message,
+          }),
+        });
+
+        const data = await response.json();
+        if (response.ok && data.success) {
+          setIsSuccess(true);
+          form.reset();
+          setServiceInterest('');
+        } else {
+          const subject = encodeURIComponent(`Inquiry from ${name} — AMJ Solutions Group`);
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\nRole: ${role || 'N/A'}\nService Interest: ${serviceInterest || 'N/A'}\n\nMessage:\n${message}`
+          );
+          window.location.href = `mailto:ana@amjsolutionsgroup.com?subject=${subject}&body=${body}`;
+          setIsSuccess(true);
+          form.reset();
+          setServiceInterest('');
+        }
+      } catch {
+        const subject = encodeURIComponent(`Inquiry from ${name} — AMJ Solutions Group`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\nRole: ${role || 'N/A'}\nService Interest: ${serviceInterest || 'N/A'}\n\nMessage:\n${message}`
+        );
+        window.location.href = `mailto:ana@amjsolutionsgroup.com?subject=${subject}&body=${body}`;
         setIsSuccess(true);
         form.reset();
         setServiceInterest('');
-      } else {
-        setError(data.message || 'There was an error sending your message. Please try again.');
       }
-    } catch (err) {
-      setError('There was an error sending your message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
     }
+
+    setIsSubmitting(false);
   };
 
   if (isSuccess) {
