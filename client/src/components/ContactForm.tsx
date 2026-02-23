@@ -9,23 +9,15 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Send, CheckCircle2 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
 
 export default function ContactForm() {
   const [serviceInterest, setServiceInterest] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
-  const [web3formsKey, setWeb3formsKey] = useState('');
-
-  useEffect(() => {
-    fetch('/api/config')
-      .then(res => res.json())
-      .then(data => {
-        if (data.web3formsKey) setWeb3formsKey(data.web3formsKey);
-      })
-      .catch(() => {});
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,7 +38,7 @@ export default function ContactForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: web3formsKey,
+          access_key: WEB3FORMS_KEY,
           name,
           email,
           company: company || 'Not provided',

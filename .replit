@@ -44,5 +44,6 @@ waitForPort = 5000
 VITE_CALENDLY_URL = "https://calendly.com/ana-amjsolutionsgroup/30min"
 RESEND_FROM_EMAIL = "AMJ Solutions Group <contact@amjsolutionsgroup.com>"
 RESEND_TO_EMAIL = "ana@amjsolutionsgroup.com"
+VITE_WEB3FORMS_KEY = "b1b21403-e527-434f-ba4f-82a405348e33"
 
 [userenv.development]
