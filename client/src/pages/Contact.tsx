@@ -29,7 +29,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             <div className="lg:col-span-2 order-2 lg:order-1">
               <FadeIn direction="left">
-                <div className="sticky top-24">
+                <div className="lg:sticky lg:top-24">
                   <h2 className="text-2xl font-semibold text-foreground mb-4">
                     Schedule a Strategy Call
                   </h2>
@@ -85,10 +85,9 @@ export default function Contact() {
                     <iframe
                       src={calendlyUrl}
                       width="100%"
-                      height="580"
                       frameBorder="0"
                       title="Schedule a consultation"
-                      className="w-full"
+                      className="w-full h-[450px] sm:h-[580px]"
                       data-testid="calendly-embed"
                     />
                   ) : (
@@ -130,7 +129,7 @@ export default function Contact() {
             </div>
           </FadeIn>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>
               <FadeIn delay={100}>
                 <ContactForm />

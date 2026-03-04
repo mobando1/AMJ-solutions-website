@@ -48,7 +48,7 @@ export default function CalendlyButtonModal({
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-4xl h-[80vh]">
+        <DialogContent className="max-w-4xl h-[90vh] sm:h-[80vh]">
           <DialogHeader>
             <DialogTitle>Schedule a Consultation</DialogTitle>
             <DialogDescription>

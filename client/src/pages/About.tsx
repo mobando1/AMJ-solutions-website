@@ -115,7 +115,7 @@ export default function About() {
                 <FadeIn key={index} delay={index * 100}>
                   <div className="relative flex gap-6">
                     <div className="flex-shrink-0 relative z-10">
-                      <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary text-primary-foreground font-bold text-lg sm:text-xl flex items-center justify-center shadow-lg">
                         {item.step}
                       </div>
                     </div>
@@ -141,7 +141,7 @@ export default function About() {
               <img
                 src={butterflyImage}
                 alt="Transformation symbol"
-                className="h-24 w-24 opacity-80"
+                className="h-16 w-16 sm:h-24 sm:w-24 opacity-80"
                 data-testid="img-butterfly"
               />
             </div>

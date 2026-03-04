@@ -30,11 +30,11 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-4">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {navigation.company.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} data-testid={`link-footer-${item.name.toLowerCase().replace(' ', '-')}`}>
-                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <span className="inline-block py-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                       {item.name}
                     </span>
                   </Link>
@@ -46,19 +46,19 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:ana@amjsolutionsgroup.com" className="hover:text-primary transition-colors" data-testid="link-email">
+              <li>
+                <a href="mailto:ana@amjsolutionsgroup.com" className="flex items-center gap-2 py-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+                  <Mail className="h-4 w-4 flex-shrink-0" />
                   ana@amjsolutionsgroup.com
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+12106063073" className="hover:text-primary transition-colors" data-testid="link-phone">
+              <li>
+                <a href="tel:+12106063073" className="flex items-center gap-2 py-2 text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
+                  <Phone className="h-4 w-4 flex-shrink-0" />
                   (210) 606-3073
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2 py-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
                 <span>Boca Raton, Florida</span>
               </li>
@@ -67,11 +67,11 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-4">Legal</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {navigation.legal.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} data-testid={`link-footer-${item.name.toLowerCase().replace(' ', '-')}`}>
-                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <span className="inline-block py-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                       {item.name}
                     </span>
                   </Link>

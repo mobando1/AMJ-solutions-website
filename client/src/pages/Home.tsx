@@ -272,7 +272,7 @@ export default function Home() {
               <img 
                 src={anaPhoto} 
                 alt="Ana Nelson" 
-                className="w-48 h-48 object-cover object-top rounded-full border-4 border-primary/20 shadow-lg"
+                className="w-32 h-32 sm:w-48 sm:h-48 object-cover object-top rounded-full border-4 border-primary/20 shadow-lg"
               />
             </div>
           </div>

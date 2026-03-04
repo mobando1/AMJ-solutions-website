@@ -93,7 +93,7 @@ export default function Services() {
             className={index % 2 === 0 ? 'bg-background' : 'bg-card'}
           >
             <FadeIn>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
                     <Icon className="h-8 w-8 text-primary" />
