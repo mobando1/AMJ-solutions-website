@@ -30,6 +30,7 @@ export default function LogoMarquee() {
             <img
               src={client.logo}
               alt={`${client.name} logo`}
+              loading="lazy"
               className="h-8 w-auto object-contain"
             />
           </div>

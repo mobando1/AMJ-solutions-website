@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://amjsolutionsgroup.replit.app/sitemap.xml
+Sitemap: https://www.amjsolutionsgroup.com/sitemap.xml

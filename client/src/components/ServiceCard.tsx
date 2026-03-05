@@ -29,8 +29,8 @@ export default function ServiceCard({
     <Card className="h-full flex flex-col hover-elevate transition-all duration-200">
       <CardHeader className="space-y-4">
         {Icon && (
-          <div className="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/10 shadow-lg animate-pulse" style={{ animationDuration: '3s' }}>
-            <Icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
+          <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/10 shadow-lg animate-pulse" style={{ animationDuration: '3s' }}>
+            <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" strokeWidth={1.5} />
           </div>
         )}
         <CardTitle className="text-xl text-center">{title}</CardTitle>

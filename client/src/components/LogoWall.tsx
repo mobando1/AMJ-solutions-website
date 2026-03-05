@@ -37,6 +37,7 @@ export default function LogoWall({ className = '' }: LogoWallProps) {
               <img
                 src={client.logo}
                 alt={client.alt}
+                loading="lazy"
                 className="max-h-16 max-w-full object-contain"
               />
             ) : (

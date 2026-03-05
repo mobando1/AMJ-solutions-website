@@ -14,14 +14,15 @@ export default function Testimonial({ quote, author, role, avatar }: Testimonial
       <CardContent className="pt-6">
         <div className="flex flex-col gap-4">
           <Quote className="h-8 w-8 text-primary/20" />
-          <blockquote className="text-lg leading-relaxed text-foreground italic">
+          <blockquote className="text-base sm:text-lg leading-relaxed text-foreground italic">
             "{quote}"
           </blockquote>
           <div className="flex items-center gap-3">
             {avatar && (
-              <img 
-                src={avatar} 
-                alt={author} 
+              <img
+                src={avatar}
+                alt={author}
+                loading="lazy"
                 className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
               />
             )}

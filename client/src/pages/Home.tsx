@@ -1,4 +1,5 @@
 // Home page - AMJ Solutions Group
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import ServiceCard from '@/components/ServiceCard';
 import LogoWall from '@/components/LogoWall';
@@ -7,12 +8,12 @@ import Testimonial from '@/components/Testimonial';
 import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
 import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw, Clock, Zap, CheckCircle, Calendar } from 'lucide-react';
-import anaPhoto from '@assets/Ana Nelson FluxLoRA Image_1761180719803.jpg';
+import anaPhoto from '@assets/Ana Nelson FluxLoRA Image_1761180719803.webp';
 import { Link } from 'wouter';
-import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.png';
-import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
-import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
-import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.png';
+import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.webp';
+import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.webp';
+import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.webp';
+import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.webp';
 
 export default function Home() {
   const services = [
@@ -63,6 +64,7 @@ export default function Home() {
 
   return (
     <div>
+      <PageMeta title="Strategic Communications & Crisis Management" description="Expert crisis communications, reputation management, and executive media training led by Ana Nelson. Serving Fortune 500 companies." />
       <div
         className="relative bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
@@ -269,10 +271,11 @@ export default function Home() {
               </p>
             </div>
             <div className="flex-shrink-0 order-1 md:order-2">
-              <img 
-                src={anaPhoto} 
-                alt="Ana Nelson" 
-                className="w-48 h-48 object-cover object-top rounded-full border-4 border-primary/20 shadow-lg"
+              <img
+                src={anaPhoto}
+                alt="Ana Nelson"
+                loading="lazy"
+                className="w-32 h-32 sm:w-48 sm:h-48 object-cover object-top rounded-full border-4 border-primary/20 shadow-lg"
               />
             </div>
           </div>

@@ -1,9 +1,10 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
-import headshotImage from '@assets/Profile Pic from Mateo\'s Team_1761590706734.jpg';
-import butterflyImage from '@assets/ChatGPT Image Oct 22 2025 from Crear Prompt_1761182134105.png';
+import headshotImage from '@assets/Profile Pic from Mateo\'s Team_1761590706734.webp';
+import butterflyImage from '@assets/ChatGPT Image Oct 22 2025 from Crear Prompt_1761182134105.webp';
 
 export default function About() {
   const methodology = [
@@ -36,6 +37,7 @@ export default function About() {
 
   return (
     <div>
+      <PageMeta title="About Ana Nelson" description="Over 25 years of experience guiding Fortune 500 leaders through crisis, change, and high-stakes communications." />
       <section className="bg-card pt-6 pb-4 sm:pt-8 sm:pb-4">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -58,6 +60,7 @@ export default function About() {
               <img
                 src={headshotImage}
                 alt="Ana Nelson, Founder of AMJ Solutions Group"
+                loading="lazy"
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto"
                 data-testid="img-ana-nelson"
               />
@@ -115,7 +118,7 @@ export default function About() {
                 <FadeIn key={index} delay={index * 100}>
                   <div className="relative flex gap-6">
                     <div className="flex-shrink-0 relative z-10">
-                      <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary text-primary-foreground font-bold text-lg sm:text-xl flex items-center justify-center shadow-lg">
                         {item.step}
                       </div>
                     </div>
@@ -141,7 +144,8 @@ export default function About() {
               <img
                 src={butterflyImage}
                 alt="Transformation symbol"
-                className="h-24 w-24 opacity-80"
+                loading="lazy"
+                className="h-16 w-16 sm:h-24 sm:w-24 opacity-80"
                 data-testid="img-butterfly"
               />
             </div>

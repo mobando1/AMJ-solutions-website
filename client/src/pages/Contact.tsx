@@ -1,3 +1,4 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/ContactForm';
@@ -9,6 +10,7 @@ export default function Contact() {
 
   return (
     <div>
+      <PageMeta title="Contact" description="Schedule a confidential strategy call or send a message. Let's discuss how AMJ Solutions Group can help your organization." />
       <section className="bg-card py-4 sm:py-6">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -29,7 +31,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             <div className="lg:col-span-2 order-2 lg:order-1">
               <FadeIn direction="left">
-                <div className="sticky top-24">
+                <div className="lg:sticky lg:top-24">
                   <h2 className="text-2xl font-semibold text-foreground mb-4">
                     Schedule a Strategy Call
                   </h2>
@@ -85,10 +87,9 @@ export default function Contact() {
                     <iframe
                       src={calendlyUrl}
                       width="100%"
-                      height="580"
                       frameBorder="0"
                       title="Schedule a consultation"
-                      className="w-full"
+                      className="w-full h-[450px] sm:h-[580px]"
                       data-testid="calendly-embed"
                     />
                   ) : (
@@ -130,7 +131,7 @@ export default function Contact() {
             </div>
           </FadeIn>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>
               <FadeIn delay={100}>
                 <ContactForm />

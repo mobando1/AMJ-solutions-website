@@ -4,30 +4,16 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-declare module 'http' {
-  interface IncomingMessage {
-    rawBody: unknown
-  }
-}
-app.use(express.json({
-  verify: (req, _res, buf) => {
-    req.rawBody = buf;
-  }
-}));
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Redirect development URLs to production domain
-app.use((req, res, next) => {
-  const host = req.get('host') || '';
-  const productionDomain = 'www.amjsolutionsgroup.com';
-  
-  // If accessing via development domain, redirect to production
-  if (host.includes('replit.dev') || host.includes('replit.app')) {
-    const protocol = req.secure || req.get('x-forwarded-proto') === 'https' ? 'https' : 'https';
-    const newUrl = `${protocol}://${productionDomain}${req.originalUrl}`;
-    return res.redirect(301, newUrl);
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  if (process.env.NODE_ENV === 'production') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   }
-  
   next();
 });
 
@@ -81,15 +67,10 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
   });
