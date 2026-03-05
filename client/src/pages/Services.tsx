@@ -1,3 +1,4 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
@@ -67,6 +68,7 @@ export default function Services() {
 
   return (
     <div>
+      <PageMeta title="Services" description="Crisis communications, reputation management, media training, and executive coaching for senior leaders and organizations." />
       <section className="bg-card py-8 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>

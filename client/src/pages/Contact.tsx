@@ -1,3 +1,4 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/ContactForm';
@@ -9,6 +10,7 @@ export default function Contact() {
 
   return (
     <div>
+      <PageMeta title="Contact" description="Schedule a confidential strategy call or send a message. Let's discuss how AMJ Solutions Group can help your organization." />
       <section className="bg-card py-4 sm:py-6">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>

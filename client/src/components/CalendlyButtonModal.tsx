@@ -28,7 +28,6 @@ export default function CalendlyButtonModal({
 
   const handleClick = () => {
     if (!calendlyUrl) {
-      console.log('Calendly URL not configured');
       return;
     }
     setOpen(true);

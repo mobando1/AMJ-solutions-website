@@ -1,11 +1,12 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 import LogoWall from '@/components/LogoWall';
 import Testimonial from '@/components/Testimonial';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
-import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.png';
-import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.png';
-import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.png';
+import hannahAvatar from '@assets/generated_images/Hannah_natural_portrait_bcd615dc.webp';
+import tedAvatar from '@assets/generated_images/Ted_natural_portrait_6c2bab24.webp';
+import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrait_7d19e8ed.webp';
 
 export default function Clients() {
   const caseStudies = [
@@ -62,6 +63,7 @@ export default function Clients() {
 
   return (
     <div>
+      <PageMeta title="Clients & Case Studies" description="Trusted by Fortune 500 companies. See how AMJ Solutions Group has helped organizations navigate crises and protect their brands." />
       <Section className="bg-card">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-6">

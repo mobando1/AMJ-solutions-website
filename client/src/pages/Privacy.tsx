@@ -1,8 +1,10 @@
+import PageMeta from '@/components/PageMeta';
 import Section from '@/components/Section';
 
 export default function Privacy() {
   return (
     <div>
+      <PageMeta title="Privacy Policy" description="AMJ Solutions Group privacy policy. Learn how we collect, use, and protect your information." />
       <Section className="bg-card">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-6">
