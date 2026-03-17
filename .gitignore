@@ -4,6 +4,7 @@ node_modules
 # variables privadas
 .env
 .env.*
+!.env.production
 
 # mac
 .DS_Store
