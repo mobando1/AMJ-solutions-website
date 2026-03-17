@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Linkedin, Calendar, MessageSquare, CheckCircle2, Clock, Shield, Users } from 'lucide-react';
 
 export default function Contact() {
+  // Calendly scheduling integration
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || '';
 
   return (
