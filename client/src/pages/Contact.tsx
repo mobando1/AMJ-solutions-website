@@ -3,7 +3,7 @@ import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/ContactForm';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Linkedin, Clock, Shield, Users, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Calendar, MessageSquare, CheckCircle2, Clock, Shield, Users } from 'lucide-react';
 
 export default function Contact() {
   const calendlyUrl = 'https://calendly.com/ana-amjsolutionsgroup/new-meeting?hide_gdpr_banner=1';
@@ -11,44 +11,91 @@ export default function Contact() {
   return (
     <div>
       <PageMeta title="Contact" description="Schedule a confidential strategy call or send a message. Let's discuss how AMJ Solutions Group can help your organization." />
-
-      <section className="bg-background py-8 sm:py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-card py-4 sm:py-6">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="text-center mb-6">
+            <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-3xl sm:text-4xl font-semibold text-foreground mb-3">
-                Schedule a Strategy Call
+                Let's Talk
               </h1>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-5">
-                A 30-minute confidential conversation to understand your situation and explore how we can help.
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Schedule a confidential strategy call or send us a message.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-primary" />
-                  <span>30 minutes</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-primary" />
-                  <span>Confidential</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-primary" />
-                  <span>With Ana Nelson</span>
-                </div>
-              </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
 
-          <FadeIn delay={100}>
-            <iframe
-              src={calendlyUrl}
-              width="100%"
-              frameBorder="0"
-              title="Schedule a consultation"
-              className="w-full h-[680px] sm:h-[700px] rounded-lg"
-              data-testid="calendly-embed"
-            />
-          </FadeIn>
+      <section className="bg-background py-6 sm:py-8">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            <div className="lg:col-span-2 order-2 lg:order-1">
+              <FadeIn direction="left">
+                <div className="lg:sticky lg:top-24">
+                  <h2 className="text-2xl font-semibold text-foreground mb-4">
+                    Schedule a Strategy Call
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    A 30-minute confidential conversation to understand your situation and explore how we can help.
+                  </p>
+
+                  <div className="space-y-4 mb-6">
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">What to Expect</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-muted-foreground">Discuss your current challenges and priorities</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-muted-foreground">Get an honest assessment of how we might help</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-muted-foreground">Explore potential engagement approaches</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-muted-foreground">No pressure, no obligation — just a conversation</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-primary" />
+                      <span>30 minutes</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Shield className="h-4 w-4 text-primary" />
+                      <span>Confidential</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="h-4 w-4 text-primary" />
+                      <span>With Ana Nelson</span>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-3 order-1 lg:order-2">
+              <FadeIn direction="right" delay={200}>
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <iframe
+                    src={calendlyUrl}
+                    width="100%"
+                    frameBorder="0"
+                    title="Schedule a consultation"
+                    className="w-full h-[680px] sm:h-[700px]"
+                    data-testid="calendly-embed"
+                  />
+                </CardContent>
+              </Card>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -145,6 +192,21 @@ export default function Contact() {
             </div>
           </div>
         </div>
+      </Section>
+
+      <Section className="bg-background">
+        <FadeIn>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            Confidential Consultations
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            All consultations are conducted with strict confidentiality. We understand the
+            sensitive nature of communications challenges and provide white-glove service with the
+            discretion you expect at the executive level.
+          </p>
+        </div>
+        </FadeIn>
       </Section>
     </div>
   );
