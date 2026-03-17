@@ -24,7 +24,7 @@ export default function CalendlyButtonModal({
 }: CalendlyButtonModalProps) {
   const [open, setOpen] = useState(false);
 
-  const calendlyUrl = import.meta.env.VITE_CALENDLY_URL || '';
+  const calendlyUrl = 'https://calendly.com/ana-amjsolutionsgroup/new-meeting';
 
   const handleClick = () => {
     if (!calendlyUrl) {
