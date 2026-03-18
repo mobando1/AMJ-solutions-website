@@ -87,8 +87,8 @@ export default function Services() {
       <section className="bg-card py-8 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4 text-center">
                 Executive Stability Advisory
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -164,7 +164,7 @@ export default function Services() {
           <FadeIn delay={100}>
             <div className="mb-12">
               <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
-                Executive Stability Advisory Engagements
+                Executive Stability Advisory Engagement Options
               </h3>
 
               <div className="mb-10">
@@ -209,10 +209,19 @@ export default function Services() {
                 </div>
               </div>
 
+              <div className="relative my-12">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-border" />
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="bg-background px-4 text-sm font-medium text-muted-foreground uppercase tracking-wide">Or</span>
+                </div>
+              </div>
+
               <div className="max-w-2xl mx-auto">
-                <Card className="hover-elevate transition-all duration-200">
+                <h4 className="text-xl font-semibold text-primary text-center mb-6">Ongoing Executive Advisory Retainer</h4>
+                <Card className="hover-elevate transition-all duration-200 border-primary/30">
                   <CardContent className="pt-8 text-center">
-                    <h4 className="text-xl font-semibold text-primary mb-3">Ongoing Executive Advisory</h4>
                     <p className="text-muted-foreground">
                       Continued support to maintain alignment, oversee risk, and sustain execution over time.
                     </p>

@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">AMJ Solutions Group, LLC.</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
+              Aligning leadership and operations during risk, change, and uncertainty to protect what you've built and strengthen execution.
             </p>
           </div>
 

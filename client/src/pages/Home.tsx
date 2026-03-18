@@ -78,11 +78,14 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <FadeIn direction="left" duration={800}>
             <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-                Executive Stability Advisory Across Enterprise Risk, AI and Technology Governance, Operational Resilience, and Disaster Recovery
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+                Protect what you've built.
               </h1>
+              <p className="text-xl sm:text-2xl font-medium text-foreground/80 mb-4">
+                Aligning Leadership and Operations to Strengthen Execution
+              </p>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-                Aligning leadership, risk, operations, and technology governance, including AI and enterprise systems, to maintain stability, strengthen decision-making, and keep organizations in control during disruption.
+                Bringing structure to risk, communication, and technology environments, including AI and enterprise systems, so leaders make clear decisions, reduce exposure, and sustain momentum during disruption.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
@@ -91,7 +94,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <a href="#services-section">
-                  <Button variant="outline" size="lg" data-testid="button-services">
+                  <Button variant="default" size="lg" data-testid="button-services">
                     See How We Work
                   </Button>
                 </a>
