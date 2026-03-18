@@ -73,10 +73,10 @@ export default function About() {
                 Trusted Executive Counsel
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Ana Nelson brings more than 25 years of experience advising C-suite leaders across energy, financial services, education, government, and defense-adjacent environments—where decisions carry consequence and execution must hold under pressure. She has led mission-critical initiatives, stabilized complex programs, and supported executives through crisis, transformation, and operational strain, including aligning leadership and governance across enterprise technology, data, and AI-driven environments.
+                Ana Nelson brings more than 25 years of experience advising C-suite leaders across energy, financial services, education, government, and defense-adjacent environments, where decisions carry consequence and execution must hold under pressure. She has led mission-critical initiatives, stabilized complex programs, and supported executives through crisis, transformation, and operational strain, including aligning leadership and governance across enterprise technology, data, and AI-driven environments.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Respected for her execution rigor, sound judgment, and clear, candid counsel, Ana brings the structure and perspective leaders rely on to maintain alignment and make decisions that hold under pressure. Her approach is grounded in resilience and discipline, shaped by her family's journey from Cuba to the United States—informing how she helps organizations move forward with clarity and confidence when it matters most.
+                Respected for her execution rigor, sound judgment, and clear, candid counsel, Ana brings the structure and perspective leaders rely on to maintain alignment and make decisions that hold under pressure. Her approach is grounded in resilience and discipline, shaped by her family's journey from Cuba to the United States, informing how she helps organizations move forward with clarity and confidence when it matters most.
               </p>
               <div className="space-y-3 pt-4">
                 <div className="flex items-start gap-3">
