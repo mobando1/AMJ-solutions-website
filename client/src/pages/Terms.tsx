@@ -7,7 +7,7 @@ export default function Terms() {
       <PageMeta title="Terms of Service" description="AMJ Solutions Group terms of service for website usage and consulting engagements." />
       <Section className="bg-card">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-6">
+          <h1 className="text-2xl sm:text-4xl font-semibold text-foreground mb-6">
             Terms of Service
           </h1>
           <p className="text-lg text-muted-foreground">Last updated: October 2025</p>

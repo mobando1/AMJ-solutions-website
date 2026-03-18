@@ -78,7 +78,7 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <FadeIn direction="left" duration={800}>
             <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-foreground leading-snug mb-4">
                 Protect what you've built.
               </h1>
               <p className="text-xl sm:text-2xl font-medium text-foreground/80 mb-4">
@@ -227,7 +227,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">Experience You Can Rely On</h2>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
           {whyAmj.map((item, index) => {
             const Icon = item.icon;
             return (

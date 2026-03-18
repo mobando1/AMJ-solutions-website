@@ -23,7 +23,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link href="/" data-testid="link-home" className="flex items-center gap-3">
               <img src={butterflyLogo} alt="AMJ Butterfly Logo" className="h-12 w-12 object-contain" />
-              <span className="text-xl font-semibold text-foreground">AMJ Solutions Group</span>
+              <span className="text-base sm:text-xl font-semibold text-foreground">AMJ Solutions Group</span>
             </Link>
           </div>
 

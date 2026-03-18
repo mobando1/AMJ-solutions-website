@@ -88,7 +88,7 @@ export default function Contact() {
                     width="100%"
                     frameBorder="0"
                     title="Schedule a consultation"
-                    className="w-full h-[750px] sm:h-[900px]"
+                    className="w-full h-[600px] sm:h-[750px] lg:h-[900px]"
                     data-testid="calendly-embed"
                   />
                 </CardContent>

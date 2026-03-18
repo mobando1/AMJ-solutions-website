@@ -42,7 +42,7 @@ export default function About() {
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-2">
+              <h1 className="text-2xl sm:text-4xl font-semibold text-foreground mb-2">
                 About Ana Nelson
               </h1>
               <p className="text-lg text-primary font-medium mb-2">
