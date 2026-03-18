@@ -7,7 +7,7 @@ import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Users, TrendingUp, Target, MessageCircle, RefreshCw, Clock, Zap, Calendar, Cpu, Server, AlertTriangle } from 'lucide-react';
+import { Shield, Award, Users, TrendingUp, Target, MessageCircle, RefreshCw, Zap, Calendar, Cpu, Server, AlertTriangle } from 'lucide-react';
 import anaPhoto from '@assets/Ana Nelson FluxLoRA Image_1761180719803.webp';
 import { Link } from 'wouter';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.webp';
@@ -78,7 +78,7 @@ export default function Home() {
         <Section className="relative py-20 lg:py-32">
           <FadeIn direction="left" duration={800}>
             <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
                 Protect what you've built.
               </h1>
               <p className="text-xl sm:text-2xl font-medium text-foreground/80 mb-4">
@@ -140,7 +140,7 @@ export default function Home() {
 
         <FadeIn delay={200}>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-card border border-border rounded-lg p-8">
+            <div className="bg-card border border-border rounded-lg p-4 sm:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { icon: Server, text: 'Enterprise technology platforms become unstable or disrupted' },
@@ -195,16 +195,16 @@ export default function Home() {
               Click below to view each engagement offering:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/services#engagement-timeline">
+              <a href="/services#engagement-timeline">
                 <Button size="lg" variant="default">
                   90-Day Stabilization Sprint
                 </Button>
-              </Link>
-              <Link href="/services#engagement-timeline">
-                <Button size="lg" variant="outline">
+              </a>
+              <a href="/services#engagement-timeline">
+                <Button size="lg" variant="default">
                   Annual Retainer for Executive Stability Advisory
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </FadeIn>
@@ -356,6 +356,7 @@ export default function Home() {
               <Button
                 variant="secondary"
                 size="lg"
+                className="cta-button-secondary"
                 data-testid="button-contact-cta"
               >
                 Let's Talk

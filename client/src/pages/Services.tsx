@@ -91,7 +91,7 @@ export default function Services() {
               <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4 text-center">
                 Executive Stability Advisory
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4 text-center">
                 Maintaining stability across leadership, communication, risk, technology, and AI-enabled environments, so organizations move forward with clarity.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
@@ -125,7 +125,7 @@ export default function Services() {
                   </p>
                 </div>
                 <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                  <div className="bg-card border border-border rounded-lg p-8">
+                  <div className="bg-card border border-border rounded-lg p-4 sm:p-8">
                     <h3 className="text-lg font-semibold text-foreground mb-4">Key Outcomes</h3>
                     <ul className="space-y-3">
                       {service.outcomes.map((outcome, idx) => (
@@ -174,7 +174,7 @@ export default function Services() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <Card className="relative hover-elevate transition-all duration-200">
                       <CardContent className="pt-8 text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
                           <span className="text-xl font-bold">1-30</span>
                         </div>
                         <h4 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h4>
@@ -185,7 +185,7 @@ export default function Services() {
                     </Card>
                     <Card className="relative hover-elevate transition-all duration-200">
                       <CardContent className="pt-8 text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
                           <span className="text-xl font-bold">31-60</span>
                         </div>
                         <h4 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h4>
@@ -196,7 +196,7 @@ export default function Services() {
                     </Card>
                     <Card className="relative hover-elevate transition-all duration-200">
                       <CardContent className="pt-8 text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
                           <span className="text-xl font-bold">61-90</span>
                         </div>
                         <h4 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h4>
@@ -246,6 +246,7 @@ export default function Services() {
               <Button
                 variant="secondary"
                 size="lg"
+                className="cta-button-secondary"
                 data-testid="button-contact-cta"
               >
                 Schedule a Strategy Call
