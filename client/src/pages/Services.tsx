@@ -3,84 +3,102 @@ import Section from '@/components/Section';
 import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, MessageCircle, RefreshCw, Target, CheckCircle2 } from 'lucide-react';
+import { Shield, MessageCircle, Target, CheckCircle2, Users, Cpu } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Services() {
   const services = [
     {
-      id: 'crisis-risk-advisory',
-      icon: Shield,
-      title: 'Executive Crisis & Risk Advisory',
-      tagline: 'Structure, judgment, and control when risk escalates.',
+      id: 'leadership-alignment',
+      icon: Users,
+      title: 'Leadership Alignment & Executive Advisory',
+      tagline: 'Clear direction, aligned leadership, and disciplined decision-making.',
       description:
-        'When stakes are high and decisions carry consequence, we provide the structure, judgment, and steady hand leaders need. Our crisis and risk advisory support helps executives navigate uncertainty with clarity and control.',
+        'We support senior leaders in maintaining alignment, clarifying priorities, and ensuring decisions move with structure and consistency; especially when pressure tests leadership.',
       outcomes: [
-        'Rapid situation assessment and stabilization',
-        'Clear decision frameworks under pressure',
-        'Stakeholder confidence maintained through disciplined communication',
-        'Risk mitigation strategies that protect reputation and operations',
+        'Aligned leadership direction and priorities',
+        'Clear, confident executive decision-making',
+        'Reduced friction across leadership teams',
+        'Strengthened accountability at the executive level',
+      ],
+    },
+    {
+      id: 'risk-resilience',
+      icon: Shield,
+      title: 'Risk & Operational Resilience',
+      tagline: 'Structure and control when risk threatens stability.',
+      description:
+        'We support leaders in maintaining control during disruption—ensuring response, recovery, and continuity are managed with discipline.',
+      outcomes: [
+        'Stabilized leadership response during disruption',
+        'Reduced escalation and avoidable risk',
+        'Strengthened operational resilience',
+        'Protection of continuity and reputation',
       ],
     },
     {
       id: 'strategic-communications',
       icon: MessageCircle,
-      title: 'Strategic Communications & Leadership Alignment',
-      tagline: 'Consistent messaging that strengthens trust and clarity.',
+      title: 'Strategic Communications & Stakeholder Alignment',
+      tagline: 'Clear, consistent communication that reinforces leadership control.',
       description:
-        'Fragmented communication erodes trust. We help leadership teams align on message, establish consistent communication protocols, and strengthen stakeholder relationships through clarity and precision.',
+        'We align communication across leadership and stakeholders; ensuring clarity, consistency, and confidence at every level.',
       outcomes: [
-        'Unified messaging across leadership and teams',
-        'Strengthened trust with key stakeholders',
-        'Clear communication protocols for critical moments',
-        'Enhanced executive presence and credibility',
+        'Unified leadership messaging and direction',
+        'Clear communication structures across teams',
+        'Strengthened stakeholder confidence',
+        'Disciplined communication in critical moments',
       ],
     },
     {
-      id: 'change-leadership',
-      icon: RefreshCw,
-      title: 'Change Leadership & Organizational Stability',
-      tagline: 'Guiding transitions with confidence and continuity.',
+      id: 'technology-ai-governance',
+      icon: Cpu,
+      title: 'Technology Risk & AI Governance',
+      tagline: 'Ensuring technology and AI are governed with the same discipline as leadership, risk, and operations; aligning innovation with risk oversight, regulatory expectations, and business priorities.',
       description:
-        'Change creates instability when poorly managed. We guide organizations through transitions—leadership changes, restructuring, cultural shifts—ensuring continuity, alignment, and forward momentum.',
+        'We support leaders in maintaining control across enterprise systems, data environments, and AI-driven initiatives; ensuring governance, accountability, and decision-making remain aligned as complexity increases.',
       outcomes: [
-        'Smooth leadership and organizational transitions',
-        'Reduced uncertainty and resistance to change',
-        'Maintained productivity during periods of change',
-        'Stronger organizational alignment and culture',
+        'Clear governance over technology, data, and AI risk',
+        'Alignment between executive leadership and technical teams',
+        'Reduced regulatory, operational, and reputational exposure',
+        'Technology and AI initiatives that support—not disrupt—execution',
+        'Increased confidence in decision-making across data-driven environments',
       ],
     },
     {
       id: 'program-stabilization',
       icon: Target,
       title: 'Program & Execution Stabilization',
-      tagline: 'Restoring momentum to stalled or strained initiatives.',
+      tagline: 'Restoring momentum and reinforcing execution discipline.',
       description:
-        'Critical initiatives stall when execution falters. We step in to restore momentum, clarify direction, and ensure programs deliver results—getting stalled initiatives back on track.',
+        'We bring structure to execution; ensuring initiatives remain aligned to leadership priorities and move forward with accountability and control.',
       outcomes: [
-        'Stalled programs restarted with clear direction',
-        'Improved execution and accountability',
-        'Stakeholder confidence restored',
-        'Measurable progress toward strategic goals',
+        'Reestablished program direction and control',
+        'Strengthened accountability and execution discipline',
+        'Restored stakeholder confidence',
+        'Measurable forward progress on critical initiatives',
       ],
     },
   ];
 
   return (
     <div>
-      <PageMeta title="Services" description="Crisis communications, reputation management, media training, and executive coaching for senior leaders and organizations." />
+      <PageMeta title="Services" description="Executive Stability Advisory — maintaining stability across leadership, communication, risk, technology, and AI-enabled environments." />
       <section className="bg-card py-8 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-4">
-                Stability Focused Advisory Support
+                Executive Stability Advisory
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
+                Maintaining stability across leadership, communication, risk, technology, and AI-enabled environments, so organizations move forward with clarity.
               </p>
-              <p className="text-sm text-muted-foreground italic">
-                All client work is protected by strict confidentiality agreements
+              <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                We operate at the executive level to align leadership, communication, and execution; ensuring stability holds, decisions carry through, and organizations continue moving forward under pressure.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                All support is delivered through Executive Stability Advisory engagement; structured, embedded, and applied based on the level of risk, complexity, and organizational need.
               </p>
             </div>
           </FadeIn>
@@ -102,17 +120,9 @@ export default function Services() {
                   </div>
                   <h2 className="text-3xl font-semibold text-foreground mb-2">{service.title}</h2>
                   <p className="text-lg text-primary font-medium mb-4">{service.tagline}</p>
-                  <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-                  <Link href="/contact">
-                    <Button
-                      variant="outline"
-                      data-testid={`button-consult-${service.id}`}
-                    >
-                      Discuss This Service
-                    </Button>
-                  </Link>
                 </div>
                 <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
                   <div className="bg-card border border-border rounded-lg p-8">
@@ -135,76 +145,79 @@ export default function Services() {
         );
       })}
 
-      <Section className="bg-background">
+      <Section id="engagement-timeline" className="bg-background">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
                 How Engagements Work
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Early engagement brings control and clarity
+              <p className="text-lg text-muted-foreground mb-2">
+                We operate as embedded executive advisors, working alongside leadership to maintain alignment across leadership, communication, risk, technology, and execution.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Including oversight of technology risk, data governance, and AI-driven environments impacting leadership decisions and execution.
               </p>
             </div>
           </FadeIn>
-          
-          <div className="relative">
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <FadeIn delay={0}>
-                <Card className="relative hover-elevate transition-all duration-200">
+
+          <FadeIn delay={100}>
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
+                Executive Stability Advisory Engagements
+              </h3>
+
+              <div className="mb-10">
+                <h4 className="text-xl font-semibold text-primary text-center mb-6">90-Day Stabilization Sprint</h4>
+                <div className="relative">
+                  <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <Card className="relative hover-elevate transition-all duration-200">
+                      <CardContent className="pt-8 text-center">
+                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                          <span className="text-xl font-bold">1-30</span>
+                        </div>
+                        <h4 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Stabilize leadership, risk, and operational alignment
+                        </p>
+                      </CardContent>
+                    </Card>
+                    <Card className="relative hover-elevate transition-all duration-200">
+                      <CardContent className="pt-8 text-center">
+                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                          <span className="text-xl font-bold">31-60</span>
+                        </div>
+                        <h4 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Align leadership, governance, and decision structures
+                        </p>
+                      </CardContent>
+                    </Card>
+                    <Card className="relative hover-elevate transition-all duration-200">
+                      <CardContent className="pt-8 text-center">
+                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
+                          <span className="text-xl font-bold">61-90</span>
+                        </div>
+                        <h4 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Strengthen execution and operational resilience to move forward
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              <div className="max-w-2xl mx-auto">
+                <Card className="hover-elevate transition-all duration-200">
                   <CardContent className="pt-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                      <span className="text-xl font-bold">1-30</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 1 to 30</h3>
-                    <p className="text-lg font-medium text-primary mb-2">Stabilize & Clarify</p>
-                    <p className="text-sm text-muted-foreground">
-                      Rapidly understand the situation, risks, and decision constraints. Begin early stabilization.
+                    <h4 className="text-xl font-semibold text-primary mb-3">Ongoing Executive Advisory</h4>
+                    <p className="text-muted-foreground">
+                      Continued support to maintain alignment, oversee risk, and sustain execution over time.
                     </p>
                   </CardContent>
                 </Card>
-              </FadeIn>
-              
-              <FadeIn delay={150}>
-                <Card className="relative hover-elevate transition-all duration-200">
-                  <CardContent className="pt-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                      <span className="text-xl font-bold">31-60</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 31 to 60</h3>
-                    <p className="text-lg font-medium text-primary mb-2">Align Direction</p>
-                    <p className="text-sm text-muted-foreground">
-                      Establish clear decision pathways and leadership alignment. Reduce friction and regain control.
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-              
-              <FadeIn delay={300}>
-                <Card className="relative hover-elevate transition-all duration-200">
-                  <CardContent className="pt-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg">
-                      <span className="text-xl font-bold">61-90</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Days 61 to 90</h3>
-                    <p className="text-lg font-medium text-primary mb-2">Strengthen & Prepare</p>
-                    <p className="text-sm text-muted-foreground">
-                      Reinforce execution, capture lessons learned, and prepare leadership for what comes next.
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-            </div>
-          </div>
-          
-          <FadeIn delay={400}>
-            <div className="text-center mt-12">
-              <div className="inline-block bg-card border border-border rounded-lg px-8 py-4">
-                <p className="text-xl font-semibold text-foreground">
-                  Outcome: Control, confidence, and forward momentum.
-                </p>
               </div>
             </div>
           </FadeIn>
@@ -215,11 +228,10 @@ export default function Services() {
         <FadeIn>
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-              Let's Discuss Your Needs
+              Let's Talk Through What You Are Facing
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              Every organization faces unique challenges. Contact us for a confidential consultation to
-              explore how we can help.
+              Confidential, executive-level advisory embedded where decisions are made.
             </p>
             <Link href="/contact">
               <Button

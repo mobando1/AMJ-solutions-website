@@ -11,33 +11,33 @@ export default function About() {
     {
       step: '1',
       title: 'Assess & Stabilize',
-      description: 'Rapidly understand the situation, risks, leadership dynamics, and decision constraints. Immediate priorities are clarified and early stabilization begins.',
+      description: 'Rapidly assess the situation, risks, leadership dynamics, and decision constraints. Immediate priorities are clarified, and structure is established to restore control and early stability.',
     },
     {
       step: '2',
       title: 'Align Leadership Direction',
-      description: 'Establish clear decision pathways, leadership alignment, and consistent communication to reduce friction and regain control.',
+      description: 'Establish clear decision pathways, leadership alignment, and consistent communication, reducing friction and ensuring leaders operate with shared direction and control.',
     },
     {
       step: '3',
       title: 'Guide Execution',
-      description: 'Support leaders as direction is translated into action—ensuring communication, risk management, and execution move together.',
+      description: 'Translate leadership direction into disciplined action; ensuring communication, risk management, and execution remain aligned and moving together.',
     },
     {
       step: '4',
       title: 'Prepare Leadership',
-      description: 'Strengthen executive readiness through scenario planning, leadership coaching, and decision-making support under pressure.',
+      description: 'Strengthen executive readiness through scenario planning, structured decision support, and leadership guidance across risk, technology, and AI-driven environments.',
     },
     {
       step: '5',
       title: 'Reinforce & Prepare Forward',
-      description: 'Confirm stability, capture lessons learned, and leave leaders better prepared for what comes next.',
+      description: 'Confirm stability, reinforce operational discipline, and position leadership to move forward with clarity, alignment, and confidence.',
     },
   ];
 
   return (
     <div>
-      <PageMeta title="About Ana Nelson" description="Over 25 years of experience guiding Fortune 500 leaders through crisis, change, and high-stakes communications." />
+      <PageMeta title="About Ana Nelson" description="Executive Advisor & Fractional COO — aligning leadership, communication, risk, technology, and AI governance to maintain stability." />
       <section className="bg-card pt-6 pb-4 sm:pt-8 sm:pb-4">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -45,8 +45,11 @@ export default function About() {
               <h1 className="text-4xl sm:text-5xl font-semibold text-foreground mb-2">
                 About Ana Nelson
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                More than 25 years of combined leadership experience guiding organizations through their most critical moments
+              <p className="text-lg text-primary font-medium mb-2">
+                Executive Advisor & Fractional COO
+              </p>
+              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+                Aligning leadership, communication, risk, technology, and AI governance to maintain stability and move forward with clarity
               </p>
             </div>
           </FadeIn>
@@ -70,28 +73,34 @@ export default function About() {
                 Trusted Executive Counsel
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Ana Nelson brings more than 25 years of senior-level advisory and leadership experience supporting executives through risk, change, and uncertainty. She is trusted by C-suite leaders when decisions carry consequence, communication must be precise, and execution cannot falter.
+                Ana Nelson brings more than 25 years of experience advising C-suite leaders across energy, financial services, education, government, and defense-adjacent environments; where decisions carry consequence and execution must hold under pressure. She has led mission-critical initiatives, stabilized complex programs, and supported executives through crisis, transformation, and operational strain.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Her work spans financial services, energy, technology, healthcare, higher education, and government-adjacent environments. Ana's approach is grounded in clarity, discretion, and disciplined execution—helping leaders stabilize situations, align direction, and move forward with confidence.
+                Her experience includes aligning leadership and governance across enterprise technology, data, and AI-driven environments where risk, regulation, and execution intersect.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Respected for her execution rigor, sound judgment, and clear, candid counsel, Ana brings the structure and perspective leaders rely on to maintain alignment and make decisions that hold under pressure.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                No stranger to adversity, her approach is grounded in resilience and discipline shaped by her family's decision to leave Cuba and build a life in the United States under difficult circumstances. That experience informs how she supports leaders today: bringing clarity, structure, and alignment so organizations move forward with confidence when it matters most.
               </p>
               <div className="space-y-3 pt-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-muted-foreground">
-                    Advised executives at leading Fortune 500 companies
+                    Fortune 500 and Regulated Industry Experience
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-muted-foreground">
-                    Managed crisis situations with potential multi-million dollar impact
+                    Executive Crisis and Risk Leadership
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-muted-foreground">
-                    Trained hundreds of executives in media relations and crisis communication
+                    Executive Communication, Media Readiness and Stakeholder Alignment
                   </p>
                 </div>
               </div>
@@ -106,13 +115,16 @@ export default function About() {
             <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
               How We Work
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              This is how we bring structure and alignment to leadership in practice
+            </p>
           </div>
         </FadeIn>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20" />
-            
+
             <div className="space-y-8">
               {methodology.map((item, index) => (
                 <FadeIn key={index} delay={index * 100}>
@@ -122,7 +134,7 @@ export default function About() {
                         {item.step}
                       </div>
                     </div>
-                    
+
                     <Card className="flex-1 hover-elevate transition-all duration-200">
                       <CardContent className="p-6">
                         <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>

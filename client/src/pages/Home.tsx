@@ -7,7 +7,7 @@ import LogoMarquee from '@/components/LogoMarquee';
 import Testimonial from '@/components/Testimonial';
 import FadeIn from '@/components/FadeIn';
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Users, Lock, Star, Mic, TrendingUp, Sunrise, CloudRain, UserCheck, Target, BookOpen, AlertTriangle, MessageCircle, LifeBuoy, RefreshCw, Clock, Zap, CheckCircle, Calendar } from 'lucide-react';
+import { Shield, Award, Users, TrendingUp, Target, MessageCircle, RefreshCw, Clock, Zap, Calendar, Cpu, Server, AlertTriangle } from 'lucide-react';
 import anaPhoto from '@assets/Ana Nelson FluxLoRA Image_1761180719803.webp';
 import { Link } from 'wouter';
 import heroImage from '@assets/generated_images/Corporate_hero_background_image_882859ed.webp';
@@ -18,23 +18,28 @@ import lorenaAvatar from '@assets/generated_images/Lorena_hyperrealistic_portrai
 export default function Home() {
   const services = [
     {
-      title: 'Executive Crisis & Risk Advisory',
-      description: 'Structure, judgment, and control when risk escalates.',
+      title: 'Leadership Alignment & Executive Advisory',
+      description: 'Clear direction, aligned leadership, and disciplined decision-making.',
+      icon: Users,
+    },
+    {
+      title: 'Risk & Operational Resilience',
+      description: 'Maintaining control and continuity when risk threatens stability.',
       icon: Shield,
     },
     {
-      title: 'Strategic Communications & Leadership Alignment',
-      description: 'Consistent messaging that strengthens trust and clarity.',
+      title: 'Strategic Communications & Stakeholder Alignment',
+      description: 'Consistent communication that reinforces leadership control.',
       icon: MessageCircle,
     },
     {
-      title: 'Change Leadership & Organizational Stability',
-      description: 'Guiding transitions with confidence and continuity.',
-      icon: RefreshCw,
+      title: 'Technology Risk & AI Governance',
+      description: 'Ensuring technology and AI are governed with the same discipline as leadership, risk, and operations, so innovation does not introduce instability or unmanaged risk.',
+      icon: Cpu,
     },
     {
       title: 'Program & Execution Stabilization',
-      description: 'Restoring momentum to stalled or strained initiatives.',
+      description: 'Restoring momentum and reinforcing execution discipline.',
       icon: Target,
     },
   ];
@@ -42,29 +47,29 @@ export default function Home() {
   const whyAmj = [
     {
       icon: Award,
-      title: '25+ Years Experience',
-      description: 'More than 25 years of combined leadership experience across federal, state, local government, and private sectors.',
+      title: '25+ Years Executive Experience',
+      description: 'Supporting leadership across financial services, enterprise technology, energy, government, and mission-critical operational environments.',
     },
     {
       icon: Shield,
-      title: '18+ Departments',
-      description: 'Designed enterprise-wide crisis protocols for 18+ departments across multiple organizations.',
+      title: 'Enterprise Risk & Incident Leadership',
+      description: 'Designed and supported leadership coordination during high-impact operational and technology disruption events across complex organizations.',
     },
     {
-      icon: Users,
-      title: '$1.4M in Community Impact',
-      description: '$1.4M in giving across 19 community programs, demonstrating commitment to social responsibility.',
+      icon: Cpu,
+      title: 'Technology, Data, & Governance Experience',
+      description: 'Supporting governance across enterprise data environments, analytics programs, and AI-enabled decision systems.',
     },
     {
       icon: TrendingUp,
-      title: '6 Major Integrations',
-      description: 'Led cultural integration of 6 companies under unified brand across 25 locations post-acquisition.',
+      title: 'Enterprise Coordination & Execution',
+      description: 'Led cross-functional alignment across large-scale programs, enterprise systems, and multi-organization environments.',
     },
   ];
 
   return (
     <div>
-      <PageMeta title="Strategic Communications & Crisis Management" description="Expert crisis communications, reputation management, and executive media training led by Ana Nelson. Serving Fortune 500 companies." />
+      <PageMeta title="Executive Stability Advisory" description="Aligning leadership, risk, operations, and technology governance to maintain stability and control during disruption." />
       <div
         className="relative bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
@@ -74,15 +79,15 @@ export default function Home() {
           <FadeIn direction="left" duration={800}>
             <div className="max-w-3xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-                Risk. Change. Uncertainty. That's where we work.
+                Executive Stability Advisory Across Enterprise Risk, AI and Technology Governance, Operational Resilience, and Disaster Recovery
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-                Guiding leaders through risk, change, and uncertainty so they can protect their brand and regain momentum.
+                Aligning leadership, risk, operations, and technology governance, including AI and enterprise systems, to maintain stability, strengthen decision-making, and keep organizations in control during disruption.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
                   <Button size="lg" data-testid="hero-cta">
-                    Talk With an Advisor
+                    Let's Talk
                   </Button>
                 </Link>
                 <a href="#services-section">
@@ -102,10 +107,10 @@ export default function Home() {
         <FadeIn>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl sm:text-2xl font-semibold text-foreground mb-8 leading-relaxed">
-              We partner with senior leaders when decisions slow, communication breaks down, or critical initiatives stall under pressure. Your organization moves forward with clarity, control, and confidence.
+              We partner with senior leaders when risk, technology, and operations, including AI-enabled systems, begin to strain decisions, fragment communication, or stall execution; restoring clarity, alignment, and control so the organization moves forward with confidence.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
-              Founded by Ana Nelson with more than 25 years of strategic leadership across defense, government, and private sectors.
+              AMJ Solutions Group was founded by Ana Nelson after more than 25 years of experience supporting leadership teams across financial services, enterprise technology, energy, government, and mission-critical operational environments.
             </p>
             <Link href="/about">
               <Button variant="outline" size="lg" data-testid="button-meet-ana">
@@ -125,7 +130,7 @@ export default function Home() {
               Key Moments to Reach Out
             </h2>
             <p className="text-lg max-w-2xl mx-auto opacity-95">
-              Some moments in leadership feel unstable, ambiguous, or simply overwhelming. That's when we step in, to steady teams, restore alignment, and help organizations move forward with certainty.
+              Leaders typically engage when:
             </p>
           </div>
         </FadeIn>
@@ -133,15 +138,13 @@ export default function Home() {
         <FadeIn delay={200}>
           <div className="max-w-4xl mx-auto">
             <div className="bg-card border border-border rounded-lg p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-6">Leaders typically reach out when:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { icon: Clock, text: 'Decisions slow or stall due to risk or uncertainty' },
-                  { icon: MessageCircle, text: 'Communication becomes scattered or inconsistent' },
-                  { icon: RefreshCw, text: 'Change creates instability instead of progress' },
-                  { icon: AlertTriangle, text: 'A crisis is emerging or already underway' },
-                  { icon: Target, text: 'A critical initiative stalls under pressure' },
-                  { icon: Users, text: 'Leaders are carrying too much without structure' },
+                  { icon: Server, text: 'Enterprise technology platforms become unstable or disrupted' },
+                  { icon: Cpu, text: 'AI, data, or technology initiatives introduce governance gaps, risk exposure, or leadership misalignment' },
+                  { icon: MessageCircle, text: 'Leadership coordination breaks down during high-visibility events' },
+                  { icon: RefreshCw, text: 'Operational Resilience is not aligned across complex environments' },
+                  { icon: AlertTriangle, text: 'Disaster Recovery requires clear leadership structure following disruption' },
                 ].map((item, idx) => {
                   const Icon = item.icon;
                   return (
@@ -165,14 +168,14 @@ export default function Home() {
         <FadeIn>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-              Stability Focused Advisory Support
+              Executive Stability Advisory
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We don't solve in silos. We stabilize leadership, communication, risk, and execution together.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Maintaining stability across leadership, communication, risk, technology, and execution—so organizations move forward with clarity.
             </p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 100}>
               <ServiceCard
@@ -182,51 +185,26 @@ export default function Home() {
             </FadeIn>
           ))}
         </div>
-        
+
         <FadeIn delay={200}>
-          <div className="max-w-4xl mx-auto mb-12">
-            <h3 className="text-xl font-semibold text-foreground text-center mb-8">
-              Early engagement brings control and clarity:
-            </h3>
-            <div className="relative">
-              <div className="hidden md:block absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="relative bg-card border border-border rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    1-30
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Days 1 to 30</h4>
-                  <p className="text-sm text-muted-foreground">Stabilize and clarify</p>
-                </div>
-                <div className="relative bg-card border border-border rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    31-60
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Days 31 to 60</h4>
-                  <p className="text-sm text-muted-foreground">Align leadership direction</p>
-                </div>
-                <div className="relative bg-card border border-border rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    61-90
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Days 61 to 90</h4>
-                  <p className="text-sm text-muted-foreground">Strengthen execution and prepare forward</p>
-                </div>
-              </div>
-            </div>
-            <p className="text-center text-lg font-medium text-foreground mt-8">
-              Outcome: Control, confidence, and forward momentum.
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-lg text-muted-foreground mb-8">
+              Click below to view each engagement offering:
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/services#engagement-timeline">
+                <Button size="lg" variant="default">
+                  90-Day Stabilization Sprint
+                </Button>
+              </Link>
+              <Link href="/services#engagement-timeline">
+                <Button size="lg" variant="outline">
+                  Annual Retainer for Executive Stability Advisory
+                </Button>
+              </Link>
+            </div>
           </div>
         </FadeIn>
-        
-        <div className="text-center">
-          <Link href="/services">
-            <Button size="lg" variant="default" data-testid="button-view-all-services">
-              View All Services
-            </Button>
-          </Link>
-        </div>
       </Section>
 
       <Section className="bg-card">
@@ -262,12 +240,12 @@ export default function Home() {
             );
           })}
         </div>
-        
+
         <FadeIn delay={200}>
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="flex-1 order-2 md:order-1">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a Cuban American, two time military mom, raised by service, accountability, and resilience. Calm under pressure and a strong work ethic are lived values that define who I am.
+                I'm a Cuban-American and proud mom to two military kids. My career has been shaped by service, accountability, and resilience. Leadership clarity, calm under pressure and a strong work ethic are not concepts to me, they are the foundation on which I have built AMJ Solutions Group.
               </p>
             </div>
             <div className="flex-shrink-0 order-1 md:order-2">
@@ -290,18 +268,18 @@ export default function Home() {
                 Executive Stability Advisory Engagement
               </h2>
               <p className="text-lg text-muted-foreground">
-                Guiding leaders through risk, change, and uncertainty with clarity and confidence.
+                Aligning leadership, risk, operations, and technology governance to maintain stability and control during disruption, change, and ongoing operational demands.
               </p>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={200}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {[
-                { icon: Calendar, text: 'A focused 90 day advisory engagement' },
-                { icon: Users, text: 'Fractional executive level support' },
-                { icon: Target, text: 'Embedded where decisions are made' },
-                { icon: Zap, text: 'Direct access to leadership decision makers' },
+                { icon: Calendar, text: '90-day advisory engagement or ongoing executive retainer support' },
+                { icon: Shield, text: 'Executive-level oversight across enterprise risk, technology, and operations' },
+                { icon: Target, text: 'Embedded alongside leadership where decisions are made—without disrupting ongoing work' },
+                { icon: Zap, text: 'Continuous alignment, escalation support, and decision guidance during disruption and steady-state operations' },
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -317,11 +295,11 @@ export default function Home() {
               })}
             </div>
           </FadeIn>
-          
+
           <div className="text-center">
             <Link href="/contact">
               <Button size="lg" data-testid="button-strategy-call">
-                Schedule a Strategy Call
+                Let's Talk
               </Button>
             </Link>
           </div>
@@ -366,10 +344,10 @@ export default function Home() {
         <FadeIn>
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-              Ready to Protect Your Reputation?
+              Ready to Maintain Stability and Control?
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              Get expert strategic communications counsel for your organization
+              Engage executive advisory support to align leadership, risk, operations, and technology governance during disruption, change, or ongoing operational demands.
             </p>
             <Link href="/contact">
               <Button
@@ -377,7 +355,7 @@ export default function Home() {
                 size="lg"
                 data-testid="button-contact-cta"
               >
-                Contact Us Today
+                Let's Talk
               </Button>
             </Link>
           </div>
