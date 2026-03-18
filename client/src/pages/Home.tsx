@@ -195,16 +195,16 @@ export default function Home() {
               Click below to view each engagement offering:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/services#engagement-timeline">
+              <Link href="/services#engagement-timeline">
                 <Button size="lg" variant="default">
                   90-Day Stabilization Sprint
                 </Button>
-              </a>
-              <a href="/services#engagement-timeline">
+              </Link>
+              <Link href="/services#engagement-timeline">
                 <Button size="lg" variant="default">
                   Annual Retainer for Executive Stability Advisory
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </FadeIn>
