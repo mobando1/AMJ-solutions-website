@@ -44,7 +44,7 @@ export default function Header() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button size="sm" data-testid="button-consultation">
+              <Button size="sm" className="nav-cta-glow" data-testid="button-consultation">
                 Book Consultation
               </Button>
             </Link>
@@ -84,7 +84,7 @@ export default function Header() {
             ))}
             <div className="px-4 pt-2">
               <Link href="/contact">
-                <Button className="w-full" size="sm" data-testid="button-mobile-consultation">
+                <Button className="w-full nav-cta-glow" size="sm" data-testid="button-mobile-consultation">
                   Book Consultation
                 </Button>
               </Link>
