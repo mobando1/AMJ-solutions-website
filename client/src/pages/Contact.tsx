@@ -110,7 +110,15 @@ export default function Contact() {
                 Or Send Us a Message
               </h2>
               <p className="text-muted-foreground text-sm">
-                Prefer to write first? We'll respond within 24 hours.
+                Prefer to write first? Use the form below or{' '}
+                <a
+                  href="mailto:ana@amjsolutionsgroup.com"
+                  className="text-primary hover:underline font-medium"
+                  data-testid="link-direct-email"
+                >
+                  email us directly
+                </a>
+                . We'll respond within 24 hours.
               </p>
             </div>
           </FadeIn>
