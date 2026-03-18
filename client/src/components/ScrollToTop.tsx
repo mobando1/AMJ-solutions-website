@@ -7,13 +7,22 @@ export default function ScrollToTop() {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      // Small delay to let the page render before scrolling to anchor
-      setTimeout(() => {
+      const scrollToHash = () => {
         const el = document.querySelector(hash);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
+          return true;
         }
-      }, 100);
+        return false;
+      };
+
+      // Try immediately, then retry with increasing delays for lazy-loaded pages
+      if (!scrollToHash()) {
+        const delays = [100, 300, 600, 1000, 1500];
+        delays.forEach((delay) => {
+          setTimeout(() => scrollToHash(), delay);
+        });
+      }
     } else {
       window.scrollTo(0, 0);
     }

@@ -377,11 +377,11 @@
   /* Nav CTA glow — subtle glow for header Book Consultation button */
   .nav-cta-glow {
     transition: box-shadow 0.2s ease;
-    box-shadow: 0 0 12px hsl(var(--primary) / 0.25);
+    box-shadow: 0 0 16px hsl(var(--primary) / 0.4);
   }
 
   .nav-cta-glow:hover {
-    box-shadow: 0 0 18px hsl(var(--primary) / 0.35);
+    box-shadow: 0 0 24px hsl(var(--primary) / 0.5);
   }
 
   /* CTA Button Enhancement — elegant glow + lift */
