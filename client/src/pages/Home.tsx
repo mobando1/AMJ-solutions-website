@@ -248,7 +248,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-4xl mx-auto">
             <div className="flex-1 order-2 md:order-1">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a Cuban-American and proud mom to two military kids. My career has been shaped by service, accountability, and resilience. Leadership clarity, calm under pressure and a strong work ethic are not concepts to me, they are the foundation on which I have built AMJ Solutions Group.
+                I'm a proud mom to two military kids. My career has been shaped by service, accountability, and resilience. Leadership clarity, calm under pressure and a strong work ethic are not concepts to me, they are the foundation on which I have built AMJ Solutions Group.
               </p>
             </div>
             <div className="flex-shrink-0 order-1 md:order-2">
