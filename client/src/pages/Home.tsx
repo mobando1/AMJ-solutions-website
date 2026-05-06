@@ -70,10 +70,12 @@ export default function Home() {
   return (
     <div>
       <PageMeta title="Executive Stability Advisory" description="Aligning leadership, risk, operations, and technology governance to maintain stability and control during disruption." />
-      <div
-        className="relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="relative">
+        <img
+          src={heroImage}
+          alt="Executive boardroom environment representing AMJ Solutions Group's advisory work with senior leaders"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/80" />
         <Section className="relative py-20 lg:py-32">
           <FadeIn direction="left" duration={800}>
